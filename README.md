@@ -1,0 +1,11 @@
+# ConnectIQ applications & samples
+
+Nothing in this repository is officially supported by Garmin.
+
+## Applications
+
+None yet
+
+## Samples
+
+- simple-scan: connect and display temperature from a Bluetooth LE sensor
