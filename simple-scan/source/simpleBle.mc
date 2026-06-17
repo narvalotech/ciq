@@ -4,6 +4,13 @@ import Toybox.BluetoothLowEnergy;
 using Toybox.System;
 import Toybox.Lang;
 
+function sigUuid(uuid16 as Number) as BluetoothLowEnergy.Uuid {
+    // This is the Bluetooth SIG-defined UUID base for 16-bit UUIDs.
+    var uuid16_as_str = uuid16.format("%04X");
+    var uuid128 = "0000" + uuid16_as_str + "-0000-1000-8000-00805F9B34FB";
+    return BluetoothLowEnergy.stringToUuid(uuid128);
+}
+
 class simpleBle {
     private var myBleDelegate;
     hidden var profilesRegistered = false;
@@ -21,20 +28,25 @@ class simpleBle {
         m_DataCallback = dataCallback;
 
         if (!profilesRegistered) {
+            // BluetoothLowEnergy pretty much requires the layout of each
+            // service you want to interact with to to be defined and registered
+            // before the connection attempt.
+            //
+            // The CCCD needs to be added for each characteristic that you want
+            // to subscribe to. Use one registerProfile() call per-service.
+            //
+            // All UUIDs have to be in 128-bit form. Here we register a
+            // SIG-defined service and characteristic (temperature), so we
+            // convert 16-bit SIG-defined UUIDs to their long form.
+            //
+            // Custom services are supported, so we could've used any valid
+            // 128-bit UUID.
             var profile = {
-                :uuid => BluetoothLowEnergy.stringToUuid(
-                    "0000181A-0000-1000-8000-00805F9B34FB"
-                ),
+                :uuid => sigUuid(0x181a),
                 :characteristics => [
                     {
-                        :uuid => BluetoothLowEnergy.stringToUuid(
-                            "00002A6E-0000-1000-8000-00805F9B34FB"
-                        ),
-                        :descriptors => [
-                            BluetoothLowEnergy.stringToUuid(
-                                "00002902-0000-1000-8000-00805F9B34FB"
-                            ),
-                        ],
+                        :uuid => sigUuid(0x2a6e),
+                        :descriptors => [sigUuid(0x2902)],
                     },
                 ],
             };
@@ -90,7 +102,7 @@ class simpleBle {
             while (device != null) {
                 try {
                     BluetoothLowEnergy.unpairDevice(device);
-                    System.println("[BLE] Unpaired device on stop");
+                    System.println("Unpaired device on stop");
                 } catch (ex) {}
                 device = iter.next() as BluetoothLowEnergy.Device?;
             }
@@ -106,29 +118,17 @@ class simpleBle {
             // Hardcode the characteristic we want for now: 0x2a6e
             System.println("Subscribing");
             if (pairedDevice != null) {
-                var svc = pairedDevice.getService(
-                    BluetoothLowEnergy.stringToUuid(
-                        "0000181A-0000-1000-8000-00805F9B34FB"
-                    )
-                );
+                var svc = pairedDevice.getService(sigUuid(0x181a));
                 if (svc == null) {
                     System.println("svc null");
                     return;
                 }
-                var chr = svc.getCharacteristic(
-                    BluetoothLowEnergy.stringToUuid(
-                        "00002A6E-0000-1000-8000-00805F9B34FB"
-                    )
-                );
+                var chr = svc.getCharacteristic(sigUuid(0x2a6e));
                 if (chr == null) {
                     System.println("chr null");
                     return;
                 }
-                var dsc = chr.getDescriptor(
-                    BluetoothLowEnergy.stringToUuid(
-                        "00002902-0000-1000-8000-00805F9B34FB"
-                    )
-                );
+                var dsc = chr.getDescriptor(sigUuid(0x2902));
                 if (dsc == null) {
                     System.println("dsc null");
                     return;
@@ -171,7 +171,7 @@ class MyBleDelegate extends BluetoothLowEnergy.BleDelegate {
         while (result != null) {
             var name = result.getDeviceName();
             if (name != null) {
-                System.println("[BLE] Scan result: " + result.getDeviceName());
+                System.println("Scan result: " + result.getDeviceName());
 
                 if (
                     bleInstance.m_match != null &&
@@ -199,7 +199,7 @@ class MyBleDelegate extends BluetoothLowEnergy.BleDelegate {
         status as BluetoothLowEnergy.Status
     ) as Void {
         System.println(
-            "[BLE] Profile registered: " + uuid + " status=" + status
+            "Profile registered: " + uuid + " status=" + status
         );
     }
 
