@@ -17,15 +17,24 @@ class simpleBle {
     public var m_match as String? = null;
     public var m_ConnectedCallback as Method? = null;
     public var m_DataCallback as Method? = null;
+    public var m_EncryptedCallback as Method? = null;
+    public var m_ErrorCallback as Method? = null;
     public var pairedDevice as BluetoothLowEnergy.Device? = null;
     public var isSubscribed = false;
 
-    function initialize(connectedCallback, dataCallback) {
+    function initialize(
+        connectedCallback,
+        dataCallback,
+        encryptedCallback,
+        errorCallback
+    ) {
         System.println("init simpleBle");
         myBleDelegate = new MyBleDelegate(self);
         BluetoothLowEnergy.setDelegate(myBleDelegate);
         m_ConnectedCallback = connectedCallback;
         m_DataCallback = dataCallback;
+        m_EncryptedCallback = encryptedCallback;
+        m_ErrorCallback = errorCallback;
 
         if (!profilesRegistered) {
             // BluetoothLowEnergy pretty much requires the layout of each
@@ -72,7 +81,20 @@ class simpleBle {
         }
     }
 
-    function connect(result as BluetoothLowEnergy.ScanResult) {
+    function connect(
+        result as BluetoothLowEnergy.ScanResult,
+        secure as Boolean
+    ) {
+        if (secure) {
+            BluetoothLowEnergy.setConnectionStrategy(
+                BluetoothLowEnergy.CONNECTION_STRATEGY_SECURE_PAIR_BOND
+            );
+        } else {
+            BluetoothLowEnergy.setConnectionStrategy(
+                BluetoothLowEnergy.CONNECTION_STRATEGY_DEFAULT
+            );
+        }
+
         System.println("Connecting to " + result.getDeviceName());
         scan(false, null);
         if (pairedDevice == null) {
@@ -143,15 +165,37 @@ class simpleBle {
         }
     }
 
-    function tearDown() {
+    function tearDown(unpair as Boolean) {
         scan(false, null);
-        unpairAll();
+        if (unpair) {
+            unpairAll();
+        }
+        // unpairAll() doesn't need to be called. The device can be now removed
+        // from the Sensor menu on the watch.
         isSubscribed = false;
     }
 
     function on_connected(device, state) {
+        System.println("Connection state change: " + state);
+
         if (m_ConnectedCallback != null) {
-            m_ConnectedCallback.invoke(device);
+            if (state == BluetoothLowEnergy.CONNECTION_STATE_CONNECTED) {
+                m_ConnectedCallback.invoke(device);
+            } else {
+                m_ErrorCallback.invoke(device, state);
+            }
+        }
+    }
+
+    function on_encryption(device, state) {
+        System.println("Encryption state change: " + state);
+
+        if (m_EncryptedCallback != null) {
+            if (state == BluetoothLowEnergy.STATUS_SUCCESS) {
+                m_EncryptedCallback.invoke(device);
+            } else {
+                m_ErrorCallback.invoke(device, state);
+            }
         }
     }
 }
@@ -178,7 +222,7 @@ class MyBleDelegate extends BluetoothLowEnergy.BleDelegate {
                     name.find(bleInstance.m_match) != null
                 ) {
                     System.println("Telling UI to connect");
-                    bleInstance.connect(result);
+                    bleInstance.connect(result, true);
                 }
             }
             result = scanResults.next() as BluetoothLowEnergy.ScanResult?;
@@ -190,7 +234,6 @@ class MyBleDelegate extends BluetoothLowEnergy.BleDelegate {
         device as Device,
         state as ConnectionState
     ) as Void {
-        System.println("Connected!");
         bleInstance.on_connected(device, state);
     }
 
@@ -198,16 +241,25 @@ class MyBleDelegate extends BluetoothLowEnergy.BleDelegate {
         uuid as BluetoothLowEnergy.Uuid,
         status as BluetoothLowEnergy.Status
     ) as Void {
-        System.println(
-            "Profile registered: " + uuid + " status=" + status
-        );
+        System.println("Profile registered: " + uuid + " status=" + status);
     }
 
     public function onDescriptorWrite(
         descriptor as Descriptor,
         status as Status
     ) as Void {
-        System.println("Subscribed!");
+        if (status == BluetoothLowEnergy.STATUS_SUCCESS) {
+            System.println("Subscribed!");
+        } else {
+            System.println("Subscription failed: status " + status);
+        }
+    }
+
+    public function onEncryptionStatus(
+        device as Device,
+        status as Status
+    ) as Void {
+        bleInstance.on_encryption(device, status);
     }
 
     public function onCharacteristicChanged(

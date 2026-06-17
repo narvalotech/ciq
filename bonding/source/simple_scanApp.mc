@@ -8,6 +8,28 @@ var sBle as simpleBle? = null;
 
 module MyUiCallbacks {
     function onBleConnected(device as BluetoothLowEnergy.Device) as Void {
+        System.println("Switching to pairing spinner");
+        var busySpinner = new WatchUi.ProgressBar("Pairing..", null);
+        WatchUi.switchToView(
+            busySpinner,
+            new encryptionSpinnerDelegate(),
+            WatchUi.SLIDE_RIGHT
+        );
+    }
+
+    function onBleError(
+        device as BluetoothLowEnergy.Device,
+        status as BluetoothLowEnergy.Status
+    ) as Void {
+        System.println("BLE error!");
+        WatchUi.switchToView(
+            new ssErrorView(status),
+            new ssErrorViewDelegate(),
+            WatchUi.SLIDE_RIGHT
+        );
+    }
+
+    function onBleEncrypted(device as BluetoothLowEnergy.Device) as Void {
         System.println("Switching to connected view");
         WatchUi.switchToView(
             new ssConnectedView(),
@@ -29,7 +51,7 @@ class simple_scanApp extends Application.AppBase {
 
     // onStop() is called when your application is exiting
     function onStop(state as Dictionary?) as Void {
-        sBle.tearDown();
+        sBle.tearDown(false);
         System.println("[APP] Stopped, all BLE cleaned up");
     }
 
