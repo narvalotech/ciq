@@ -47,6 +47,8 @@ class simpleBle {
     public var m_DataCallback as Method? = null;
     public var m_EncryptedCallback as Method? = null;
     public var m_ErrorCallback as Method? = null;
+    public var m_DisconnectedCallback as Method? = null;
+    public var m_reconnecting as Boolean = false;
     public var pairedDevice as BluetoothLowEnergy.Device? = null;
     public var isSubscribed = false;
 
@@ -54,7 +56,8 @@ class simpleBle {
         connectedCallback,
         dataCallback,
         encryptedCallback,
-        errorCallback
+        errorCallback,
+        disconnectedCallback
     ) {
         System.println("init simpleBle");
         myBleDelegate = new MyBleDelegate(self);
@@ -63,6 +66,7 @@ class simpleBle {
         m_DataCallback = dataCallback;
         m_EncryptedCallback = encryptedCallback;
         m_ErrorCallback = errorCallback;
+        m_DisconnectedCallback = disconnectedCallback;
 
         ppBonds();
 
@@ -80,11 +84,15 @@ class simpleBle {
             //
             // Custom services are supported, so we could've used any valid
             // 128-bit UUID.
+            // HID Service (0x1812), Protocol Mode (0x2A4E) + Boot Mouse Input Report (0x2A33)
             var profile = {
-                :uuid => sigUuid(0x181a),
+                :uuid => sigUuid(0x1812),
                 :characteristics => [
                     {
-                        :uuid => sigUuid(0x2a6e),
+                        :uuid => sigUuid(0x2A4E),
+                    },
+                    {
+                        :uuid => sigUuid(0x2A33),
                         :descriptors => [sigUuid(0x2902)],
                     },
                 ],
@@ -226,31 +234,41 @@ class simpleBle {
                 return;
             }
             isSubscribed = true;
-            // Hardcode the characteristic we want for now: 0x2a6e
-            System.println("Subscribing");
+            System.println("Subscribing: setting Boot Protocol mode");
             if (pairedDevice != null) {
-                var svc = pairedDevice.getService(sigUuid(0x181a));
+                var svc = pairedDevice.getService(sigUuid(0x1812));
                 if (svc == null) {
                     System.println("svc null");
                     return;
                 }
-                var chr = svc.getCharacteristic(sigUuid(0x2a6e));
-                if (chr == null) {
-                    System.println("chr null");
+                // Write 0x00 to Protocol Mode (0x2A4E) to enter Boot Protocol mode.
+                // The CCCD write on 0x2A33 is chained in onCharacteristicWrite.
+                var protMode = svc.getCharacteristic(sigUuid(0x2A4E));
+                if (protMode == null) {
+                    System.println("Protocol Mode chr null");
                     return;
                 }
-                var dsc = chr.getDescriptor(sigUuid(0x2902));
-                if (dsc == null) {
-                    System.println("dsc null");
-                    return;
-                }
-                System.println("request cccd write");
+                protMode.requestWrite([0x00]b, {:writeType => BluetoothLowEnergy.WRITE_TYPE_DEFAULT});
+            }
+        } catch (ex) {
+            System.println("Error subscribing: " + ex);
+        }
+    }
 
-                // Subscribe by writing 01 00 to CCCD
+    function subscribeBootReport() {
+        try {
+            if (pairedDevice != null) {
+                var svc = pairedDevice.getService(sigUuid(0x1812));
+                if (svc == null) { return; }
+                var chr = svc.getCharacteristic(sigUuid(0x2A33));
+                if (chr == null) { System.println("boot report chr null"); return; }
+                var dsc = chr.getDescriptor(sigUuid(0x2902));
+                if (dsc == null) { System.println("cccd null"); return; }
+                System.println("Writing CCCD for Boot Mouse Input Report");
                 dsc.requestWrite([0x01, 0x00]b);
             }
         } catch (ex) {
-            System.println("Error subscribing");
+            System.println("Error writing CCCD: " + ex);
         }
     }
 
@@ -266,12 +284,27 @@ class simpleBle {
     function on_connected(device, state) {
         System.println("Connection state change: " + state);
 
-        if (m_ConnectedCallback != null) {
-            if (state == BluetoothLowEnergy.CONNECTION_STATE_CONNECTED) {
+        if (state == BluetoothLowEnergy.CONNECTION_STATE_CONNECTED) {
+            // Always adopt the device handed to us by the connection callback.
+            // On a background reconnect pairDevice() can throw (the bonded
+            // device is already pairing), leaving pairedDevice null even though
+            // the link came up, which would make subscribe() silently no-op.
+            pairedDevice = device;
+            if (m_ConnectedCallback != null) {
                 m_ConnectedCallback.invoke(device);
-            } else {
-                m_ErrorCallback.invoke(device, state);
             }
+            m_reconnecting = false;
+        } else {
+            // Disconnected: notify the app, then start scanning again in the
+            // background so we can transparently re-connect to the bonded
+            // device and surface a "connected" toast once it returns.
+            isSubscribed = false;
+            pairedDevice = null;
+            if (m_DisconnectedCallback != null) {
+                m_DisconnectedCallback.invoke(device, state);
+            }
+            m_reconnecting = true;
+            scan(true, m_match);
         }
     }
 
@@ -299,18 +332,20 @@ class MyBleDelegate extends BluetoothLowEnergy.BleDelegate {
     public function onScanResults(
         scanResults as BluetoothLowEnergy.Iterator
     ) as Void {
+        var hidsUuid = sigUuid(0x1812);
         var result = scanResults.next() as BluetoothLowEnergy.ScanResult?;
         while (result != null) {
-            var name = result.getDeviceName();
-            if (name != null) {
-                System.println("Scan result: " + result.getDeviceName());
-
-                if (
-                    bleInstance.m_match != null &&
-                    name.find(bleInstance.m_match) != null
-                ) {
-                    System.println("Telling UI to connect");
-                    bleInstance.connect(result, true);
+            System.println("Scan result: " + result.getDeviceName());
+            var uuids = result.getServiceUuids();
+            if (uuids != null) {
+                var uuid = uuids.next() as BluetoothLowEnergy.Uuid?;
+                while (uuid != null) {
+                    if (uuid.equals(hidsUuid)) {
+                        System.println("Found HIDS device, connecting");
+                        bleInstance.connect(result, true);
+                        break;
+                    }
+                    uuid = uuids.next() as BluetoothLowEnergy.Uuid?;
                 }
             }
             result = scanResults.next() as BluetoothLowEnergy.ScanResult?;
@@ -339,7 +374,33 @@ class MyBleDelegate extends BluetoothLowEnergy.BleDelegate {
         if (status == BluetoothLowEnergy.STATUS_SUCCESS) {
             System.println("Subscribed!");
         } else {
-            System.println("Subscription failed: status " + status);
+            // ATT 0x12 (18) = Database Out of Sync: stale bond cache.
+            // Unpair so the next connection does a fresh pair.
+            System.println("Subscription failed: status " + status + ", clearing bond");
+            bleInstance.isSubscribed = false;
+            bleInstance.tearDown(true);
+            if (bleInstance.m_ErrorCallback != null) {
+                bleInstance.m_ErrorCallback.invoke(bleInstance.pairedDevice, status);
+            }
+        }
+    }
+
+    public function onCharacteristicWrite(
+        characteristic as Characteristic,
+        status as Status
+    ) as Void {
+        if (characteristic.getUuid().equals(sigUuid(0x2A4E))) {
+            if (status == BluetoothLowEnergy.STATUS_SUCCESS) {
+                System.println("Boot Protocol mode set, subscribing to CCCD");
+                bleInstance.subscribeBootReport();
+            } else {
+                System.println("Protocol Mode write failed: " + status);
+                bleInstance.isSubscribed = false;
+                bleInstance.tearDown(true);
+                if (bleInstance.m_ErrorCallback != null) {
+                    bleInstance.m_ErrorCallback.invoke(bleInstance.pairedDevice, status);
+                }
+            }
         }
     }
 

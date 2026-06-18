@@ -43,7 +43,8 @@ class ssMainViewDelegate extends WatchUi.BehaviorDelegate {
             var data_cb = new Method(MyUiCallbacks, :onDataUpdated);
             var enc_cb = new Method(MyUiCallbacks, :onBleEncrypted);
             var err_cb = new Method(MyUiCallbacks, :onBleError);
-            sBle = new simpleBle(conn_cb, data_cb, enc_cb, err_cb);
+            var disc_cb = new Method(MyUiCallbacks, :onBleDisconnected);
+            sBle = new simpleBle(conn_cb, data_cb, enc_cb, err_cb, disc_cb);
         }
     }
 
@@ -54,7 +55,7 @@ class ssMainViewDelegate extends WatchUi.BehaviorDelegate {
 
     function onSelect() as Boolean {
         System.println("Start scanning");
-        sBle.scan(true, "Temperature");
+        sBle.scan(true, null);
 
         var busySpinner = new WatchUi.ProgressBar("Scanning for sensor..", null);
         WatchUi.pushView(

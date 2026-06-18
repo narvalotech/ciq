@@ -8,6 +8,13 @@ var sBle as simpleBle? = null;
 
 module MyUiCallbacks {
     function onBleConnected(device as BluetoothLowEnergy.Device) as Void {
+        if (sBle != null && sBle.m_reconnecting) {
+            // Background re-connection succeeded; just let the user know with
+            // a toast instead of switching views.
+            System.println("Reconnected");
+            WatchUi.showToast("Connected", null);
+            return;
+        }
         System.println("Switching to pairing spinner");
         var busySpinner = new WatchUi.ProgressBar("Pairing..", null);
         WatchUi.switchToView(
@@ -15,6 +22,14 @@ module MyUiCallbacks {
             new encryptionSpinnerDelegate(),
             WatchUi.SLIDE_RIGHT
         );
+    }
+
+    function onBleDisconnected(
+        device as BluetoothLowEnergy.Device,
+        state as BluetoothLowEnergy.ConnectionState
+    ) as Void {
+        System.println("BLE disconnected, scanning to reconnect");
+        WatchUi.showToast("Disconnected", null);
     }
 
     function onBleError(
@@ -30,18 +45,22 @@ module MyUiCallbacks {
     }
 
     function onBleEncrypted(device as BluetoothLowEnergy.Device) as Void {
-        System.println("Switching to connected view");
-        WatchUi.switchToView(
-            new ssConnectedView(),
-            new ssConnectedViewDelegate(),
-            WatchUi.SLIDE_RIGHT
-        );
+        System.println("Encrypted: subscribing and showing canvas");
+        sBle.subscribe();
+        if (!is_data_view) {
+            is_data_view = true;
+            WatchUi.switchToView(
+                new ssDataView(),
+                new ssDataViewDelegate(),
+                WatchUi.SLIDE_RIGHT
+            );
+        }
     }
 }
 
 // The compiler expects this exact name:
 // [app_name_snake_case]App
-class ble_bondingApp extends Application.AppBase {
+class mouse_canvasApp extends Application.AppBase {
     function initialize() {
         AppBase.initialize();
     }
@@ -60,6 +79,6 @@ class ble_bondingApp extends Application.AppBase {
     }
 }
 
-function getApp() as ble_bondingApp {
-    return Application.getApp() as ble_bondingApp;
+function getApp() as mouse_canvasApp {
+    return Application.getApp() as mouse_canvasApp;
 }

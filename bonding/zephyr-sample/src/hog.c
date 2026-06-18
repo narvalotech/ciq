@@ -9,7 +9,6 @@
  */
 
 #include <zephyr/types.h>
-#include <zephyr/drivers/gpio.h>
 #include <stddef.h>
 #include <string.h>
 #include <errno.h>
@@ -178,30 +177,60 @@ void hog_init(void)
 
 #define SW0_NODE DT_ALIAS(sw0)
 
+/* Send one HID mouse report and sleep for @ms milliseconds. */
+static void send_report(uint8_t buttons, int8_t dx, int8_t dy, uint32_t ms)
+{
+	int8_t report[3] = {buttons, dx, dy};
+
+	bt_gatt_notify(NULL, &hog_svc.attrs[5], report, sizeof(report));
+	k_sleep(K_MSEC(ms));
+}
+
+/*
+ * Walk one side of the square: @steps reports of @delta per axis,
+ * with @button held down.  A small pause-report (buttons=0) is sent
+ * at the end of each side so the watch can register the corner.
+ */
+static void walk_side(uint8_t button, int8_t dx, int8_t dy, int steps)
+{
+	for (int i = 0; i < steps; i++) {
+		send_report(button, dx, dy, 20);
+	}
+	/* release button momentarily at each corner */
+	send_report(0, 0, 0, 40);
+}
+
+/*
+ * Draw or erase a square of @side_steps * STEP_SIZE pixels.
+ * button=BIT(0) draws red, button=BIT(1) erases (black).
+ */
+static void draw_square(uint8_t button, int side_steps)
+{
+#define STEP_SIZE 3
+	walk_side(button,  STEP_SIZE, 0,          side_steps); /* right */
+	walk_side(button,  0,         STEP_SIZE,  side_steps); /* down  */
+	walk_side(button, -STEP_SIZE, 0,          side_steps); /* left  */
+	walk_side(button,  0,        -STEP_SIZE,  side_steps); /* up    */
+#undef STEP_SIZE
+}
+
 void hog_button_loop(void)
 {
-#if DT_NODE_HAS_STATUS_OKAY(SW0_NODE)
-	const struct gpio_dt_spec sw0 = GPIO_DT_SPEC_GET(SW0_NODE, gpios);
-
-	gpio_pin_configure_dt(&sw0, GPIO_INPUT);
-
-	for (;;) {
-		if (simulate_input) {
-			/* HID Report:
-			 * Byte 0: buttons (lower 3 bits)
-			 * Byte 1: X axis (int8)
-			 * Byte 2: Y axis (int8)
-			 */
-			int8_t report[3] = {0, 0, 0};
-
-			if (gpio_pin_get_dt(&sw0)) {
-				report[0] |= BIT(0);
-			}
-
-			bt_gatt_notify(NULL, &hog_svc.attrs[5],
-				       report, sizeof(report));
-		}
+	/* Wait until the host has enabled notifications. */
+	while (!simulate_input) {
 		k_sleep(K_MSEC(100));
 	}
-#endif
+
+	for (;;) {
+		/* Pause briefly before each cycle so the cursor is visible. */
+		k_sleep(K_MSEC(500));
+
+		/* Draw a red square (left button held). */
+		draw_square(BIT(0), 20);
+
+		k_sleep(K_MSEC(300));
+
+		/* Erase by drawing the same square in black (right button held). */
+		draw_square(BIT(1), 20);
+	}
 }
