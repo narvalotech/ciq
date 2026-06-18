@@ -41,7 +41,7 @@ module MyUiCallbacks {
 
 // The compiler expects this exact name:
 // [app_name_snake_case]App
-class simple_scanApp extends Application.AppBase {
+class ble_bondingApp extends Application.AppBase {
     function initialize() {
         AppBase.initialize();
     }
@@ -61,6 +61,6 @@ class simple_scanApp extends Application.AppBase {
     }
 }
 
-function getApp() as simple_scanApp {
-    return Application.getApp() as simple_scanApp;
+function getApp() as ble_bondingApp {
+    return Application.getApp() as ble_bondingApp;
 }
