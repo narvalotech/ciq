@@ -9,3 +9,4 @@ None yet
 ## Samples
 
 - simple-scan: connect and display temperature from a Bluetooth LE sensor
+- bonding: same as simple-scan but with permanent pairing (bonding)
