@@ -51,8 +51,7 @@ class ble_bondingApp extends Application.AppBase {
 
     // onStop() is called when your application is exiting
     function onStop(state as Dictionary?) as Void {
-        sBle.tearDown(false);
-        System.println("[APP] Stopped, all BLE cleaned up");
+        sBle.tearDown(true);
     }
 
     // Return the initial view of your application here

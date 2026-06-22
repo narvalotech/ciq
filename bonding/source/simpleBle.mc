@@ -11,6 +11,34 @@ function sigUuid(uuid16 as Number) as BluetoothLowEnergy.Uuid {
     return BluetoothLowEnergy.stringToUuid(uuid128);
 }
 
+function prettyPrintScanResult(
+    result as BluetoothLowEnergy.ScanResult
+) as Void {
+    System.println("ScanResult {");
+    System.println("  name: " + result.getDeviceName());
+    System.println("  rssi: " + result.getRssi());
+    System.println("  raw: " + result.toString());
+    System.println("}");
+}
+
+function prettyPrintDevice(device as BluetoothLowEnergy.Device) as Void {
+    System.println("Device {");
+    System.println("  name:        " + device.getName());
+    System.println("  isConnected: " + device.isConnected());
+    System.println("  isBonded:    " + device.isBonded());
+    System.println("  services:    " + device.getServices());
+    System.println("  raw:    " + device.toString());
+    System.println("}");
+}
+
+function matchesString(main as String?, sub as String?) as Boolean {
+    if (main == null || sub == null) {
+        return false;
+    }
+
+    return main.find(sub) != null;
+}
+
 class simpleBle {
     private var myBleDelegate;
     hidden var profilesRegistered = false;
@@ -35,6 +63,8 @@ class simpleBle {
         m_DataCallback = dataCallback;
         m_EncryptedCallback = encryptedCallback;
         m_ErrorCallback = errorCallback;
+
+        ppBonds();
 
         if (!profilesRegistered) {
             // BluetoothLowEnergy pretty much requires the layout of each
@@ -64,10 +94,32 @@ class simpleBle {
         }
     }
 
+    function reconnect(match as String?) as Boolean {
+        try {
+            var iter = BluetoothLowEnergy.getBondedDevices();
+            var sr = iter.next() as BluetoothLowEnergy.ScanResult?;
+            while (sr != null) {
+                var name = sr.getDeviceName();
+                if (match == null || matchesString(name, match)) {
+                    connect(sr, true);
+                    return true;
+                }
+                sr = iter.next() as BluetoothLowEnergy.ScanResult?;
+            }
+        } catch (e) {}
+
+        return false;
+    }
+
     function scan(enable as Boolean, match as String?) as Void {
         m_match = match;
         try {
             if (enable) {
+                if (reconnect(match)) {
+                    // We re-connected to a matching previously bonded device
+                    return;
+                }
+
                 BluetoothLowEnergy.setScanState(
                     BluetoothLowEnergy.SCAN_STATE_SCANNING
                 );
@@ -111,24 +163,61 @@ class simpleBle {
             if (pairedDevice != null) {
                 var dev = pairedDevice;
                 pairedDevice = null;
+                // Note: This will not remove a bonded device, it just disconnects it.
                 BluetoothLowEnergy.unpairDevice(dev);
             }
         } catch (ex) {}
     }
 
-    function unpairAll() {
-        // Unpair ALL paired devices to avoid lingering state
+    function disconnectAll() {
+        System.println("disconnectAll -- start");
+        // Disconnect all devices from this session.
+        //
+        // Note: unpairDevice()'s name is misleading: the only thing it does is
+        // DISCONNECT the link. Bonded devices will remain bonded and
+        // re-connectable via the getBondedDevices() iterator the next time the
+        // app is opened. The bonded devices persist across app sessions; to
+        // remove them, the user has to go to the "Sensors" settings menu and
+        // manually remove them.
         try {
             var iter = BluetoothLowEnergy.getPairedDevices();
             var device = iter.next() as BluetoothLowEnergy.Device?;
             while (device != null) {
                 try {
+                    System.println("Disconnecting: " + device.getName());
                     BluetoothLowEnergy.unpairDevice(device);
-                    System.println("Unpaired device on stop");
                 } catch (ex) {}
                 device = iter.next() as BluetoothLowEnergy.Device?;
             }
         } catch (e) {}
+        System.println("disconnectAll -- end");
+    }
+
+    function ppBonds() {
+        // Pretty-print:
+        // - paired devices (currently connected devices)
+        // - bonds (not connected, remembered)
+        {
+            var iter = BluetoothLowEnergy.getPairedDevices();
+            var device = iter.next() as BluetoothLowEnergy.Device?;
+            while (device != null) {
+                try {
+                    prettyPrintDevice(device);
+                } catch (ex) {}
+                device = iter.next() as BluetoothLowEnergy.Device?;
+            }
+        }
+
+        {
+            var iter = BluetoothLowEnergy.getBondedDevices();
+            var sr = iter.next() as BluetoothLowEnergy.ScanResult?;
+            while (sr != null) {
+                try {
+                    prettyPrintScanResult(sr);
+                } catch (ex) {}
+                sr = iter.next() as BluetoothLowEnergy.ScanResult?;
+            }
+        }
     }
 
     function subscribe() {
@@ -165,13 +254,12 @@ class simpleBle {
         }
     }
 
-    function tearDown(unpair as Boolean) {
+    function tearDown(disconnect as Boolean) {
         scan(false, null);
-        if (unpair) {
-            unpairAll();
+        if (disconnect) {
+            disconnectAll();
         }
-        // unpairAll() doesn't need to be called. The device can be now removed
-        // from the Sensor menu on the watch.
+
         isSubscribed = false;
     }
 
