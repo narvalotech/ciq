@@ -4,6 +4,95 @@ import Toybox.WatchUi;
 
 const sesame = "topsecret";
 
+function set_light(
+    name as String,
+    value as Boolean or Number,
+    callback
+) as Void {
+    var options = {
+        :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_TEXT_PLAIN,
+        :method => Communications.HTTP_REQUEST_METHOD_PUT,
+        :headers => {
+            "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON,
+            "Authorization" => sesame,
+        },
+    };
+
+    var bodyOnOff = {
+        "type" => "button",
+        "name" => name,
+        "value" => value ? "on" : "off",
+    };
+
+    var bodyBrightness = {
+        "type" => "slider",
+        "name" => name,
+        "value" => value.toString(),
+    };
+
+    var body =
+        value instanceof Toybox.Lang.Boolean ? bodyOnOff : bodyBrightness;
+
+    Communications.makeWebRequest(
+        "https://relay.rico.live/light",
+        body,
+        options,
+        callback
+    );
+}
+
+class BrightnessPicker extends WatchUi.Picker {
+    function initialize(currentValue as Number) {
+        var title = new WatchUi.Text({
+            :text => "Brightness",
+            :locX => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY => WatchUi.LAYOUT_VALIGN_BOTTOM,
+        });
+
+        var factory = new NumberFactory(0, 100, 10, {});
+
+        Picker.initialize({
+            :title => title,
+            :pattern => [factory],
+        });
+    }
+}
+
+class BrightnessPickerDelegate extends WatchUi.PickerDelegate {
+    var _name as String? = null;
+
+    function initialize(name as String) {
+        PickerDelegate.initialize();
+        _name = name;
+    }
+
+    function onAccept(values as Array) {
+        var picked = values[0]; // Number
+        System.println("Brightness " + picked);
+        var br = (255 * picked) / 100;
+        set_light(_name, br, null);
+
+        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+        return true;
+    }
+
+    function onCancel() {
+        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+        return true;
+    }
+
+    public function onReceive(
+        responseCode as Number,
+        data as Dictionary or String or Null
+    ) as Void {
+        if (responseCode == 200) {
+            System.println(data);
+        } else {
+            System.println("Failed to load\nError: " + responseCode.toString());
+        }
+    }
+}
+
 class WebRequestDelegate extends WatchUi.BehaviorDelegate {
     public function initialize() {
         WatchUi.BehaviorDelegate.initialize();
@@ -31,33 +120,24 @@ class MyMenuDelegate extends WatchUi.Menu2InputDelegate {
     }
 
     private function setLight(name as String, state as Boolean) as Void {
-        var options = {
-            :responseType
-            =>
-            Communications.HTTP_RESPONSE_CONTENT_TYPE_TEXT_PLAIN,
-            :method => Communications.HTTP_REQUEST_METHOD_PUT,
-            :headers => {
-                "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON,
-                "Authorization" => sesame,
-            },
-        };
-
-        var body = {
-            "type" => "button",
-            "name" => name,
-            "value" => state ? "on" : "off",
-        };
-
-        Communications.makeWebRequest(
-            "https://relay.rico.live/light",
-            body,
-            options,
-            method(:onReceive)
-        );
+        set_light(name, state, method(:onReceive));
     }
 
-    function initialize() {
+    var _items;
+    var _slider_type = false;
+
+    function initialize(items, slider_type) {
         Menu2InputDelegate.initialize();
+        _items = items;
+        _slider_type = slider_type;
+    }
+
+    function pushBrightness(name) {
+        WatchUi.pushView(
+            new BrightnessPicker(30),
+            new BrightnessPickerDelegate(name),
+            WatchUi.SLIDE_LEFT
+        );
     }
 
     function onSelect(item) {
@@ -67,7 +147,41 @@ class MyMenuDelegate extends WatchUi.Menu2InputDelegate {
                 "item: " + item.getId() + "state: " + toggleItem.isEnabled()
             );
             setLight(item.getLabel(), toggleItem.isEnabled());
+        } else {
+            pushBrightness(item.getId());
         }
+    }
+
+    public function pushMenuSliders(items as Array) as Void {
+        var menu = new WatchUi.Menu2({ :title => "Lights" });
+        var delegate;
+        for (var i = 0; i < items.size(); i++) {
+            var item = items[i];
+            menu.addItem(new MenuItem(item, null, item, null));
+        }
+
+        delegate = new MyMenuDelegate(items, true);
+        WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);
+    }
+
+    // todo: on next page, push another menu2 with brightness this time
+    function onNextPage() {
+        if (_slider_type) {
+            WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+        } else {
+            pushMenuSliders(_items);
+        }
+        return true;
+    }
+
+    function onPreviousPage() {
+        if (_slider_type) {
+            WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+        } else {
+            // Don't do anything
+        }
+
+        return true;
     }
 }
 
@@ -82,8 +196,7 @@ class WebRequestView extends WatchUi.View {
 
     public function onLayout(dc) as Void {}
 
-    public function onShow() as Void {
-    }
+    public function onShow() as Void {}
 
     private function getLights() as Void {
         var options = {
@@ -119,7 +232,7 @@ class WebRequestView extends WatchUi.View {
             );
         }
 
-        delegate = new MyMenuDelegate();
+        delegate = new MyMenuDelegate(items, false);
         WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);
     }
 
