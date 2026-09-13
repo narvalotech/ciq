@@ -4,7 +4,7 @@ Nothing in this repository is officially supported by Garmin.
 
 ## Applications
 
-None yet
+- lights: on/off control of my home lights
 
 ## Samples
 

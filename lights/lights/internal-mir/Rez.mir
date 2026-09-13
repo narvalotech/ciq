@@ -1,0 +1,1628 @@
+[ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; @symbol_usingAlias = [Ui,3,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Graphics,4,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; @symbol_usingAlias = [Gfx,5,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 7; @symbol_moduledef = [Rez,7,7,10]; ]
+module Rez {
+    [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 8; @symbol_moduledef = [Drawables,8,11,20]; ]
+    module Drawables {
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 9; @position = 27; initialized = true; @symbol_vardef = [id_monkey,9,27,36]; @symbol_type<0> = [ResourceId,9,40,50]; ]
+        var id_monkey as ResourceId;
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 10; @position = 27; initialized = true; @symbol_vardef = [LauncherIcon,10,27,39]; @symbol_type<0> = [ResourceId,10,43,53]; ]
+        var LauncherIcon as ResourceId;
+    }
+    [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 13; @symbol_moduledef = [Layouts,13,11,18]; ]
+    module Layouts {
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 13; ]
+        <init> {
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 14; @symbol_functiondef = [MainLayout,14,17,27]; @symbol_param<0> = [dc,14,28,30]; @symbol_param<0>_type<0> = [Graphics,14,34,42]; @symbol_param<0>_type<1> = [Dc,14,43,45]; @symbol_return<0> = [Array,14,50,55]; @symbol_return<1> = [WatchUi,14,56,63]; @symbol_return<2> = [Drawable,14,64,72]; ]
+        function MainLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+_home_jon_repos_ciq_lights_lights_gen_006_B4585_00_source_Rez_mcgen_14_74_19_8_start:
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 15 12 ]
+            [ "_home_jon_repos_ciq_lights_lights_gen_006_B4585_00_source_Rez_mcgen_14_74_19_8_start" "_home_jon_repos_ciq_lights_lights_gen_006_B4585_00_source_Rez_mcgen_14_74_19_8_stop" ]
+            %rez_cmp_local_bitmap_id_monkey.1 = local;
+            symbol [ rez_cmp_local_bitmap_id_monkey %rez_cmp_local_bitmap_id_monkey.1 15 16 46 ];
+            symbol [ WatchUi %tmp.3 15 53 60 ];
+            %tmp.3 = getm $.Toybox.WatchUi;
+            symbol [ Bitmap %tmp.4 15 61 67 ];
+            %tmp.4 = getv function ? %tmp.3 :Bitmap;
+            %tmp.5 = newd 4;
+            %tmp.7 = const :identifier;
+            symbol [ identifier %tmp.7 15 70 80 const ];
+            %tmp.8 = "id_monkey";
+            %tmp.9 = dup %tmp.5;
+            %tmp.10 = aputv %tmp.9 %tmp.7 %tmp.8;
+            %tmp.12 = const :rezId;
+            symbol [ rezId %tmp.12 15 96 101 const ];
+            symbol [ $ %tmp.13 15 103 104 ];
+            %tmp.13 = getm $;
+            symbol [ Rez %tmp.14 15 105 108 ];
+            %tmp.14 = getv %tmp.13 :Rez;
+            symbol [ Drawables %tmp.15 15 109 118 ];
+            %tmp.15 = getv %tmp.14 :Drawables;
+            symbol [ id_monkey %tmp.16 15 119 128 ];
+            %tmp.16 = getv %tmp.15 :id_monkey;
+            %tmp.17 = dup %tmp.10;
+            %tmp.18 = aputv %tmp.17 %tmp.12 %tmp.16;
+            %tmp.20 = const :locX;
+            symbol [ locX %tmp.20 15 131 135 const ];
+            symbol [ WatchUi %tmp.21 15 137 144 ];
+            %tmp.21 = getm $.Toybox.WatchUi;
+            symbol [ LAYOUT_HALIGN_CENTER %tmp.22 15 145 165 ];
+            %tmp.22 = getv %tmp.21 :LAYOUT_HALIGN_CENTER;
+            %tmp.23 = dup %tmp.18;
+            %tmp.24 = aputv %tmp.23 %tmp.20 %tmp.22;
+            %tmp.26 = const :locY;
+            symbol [ locY %tmp.26 15 168 172 const ];
+            symbol [ WatchUi %tmp.27 15 174 181 ];
+            %tmp.27 = getm $.Toybox.WatchUi;
+            symbol [ LAYOUT_VALIGN_CENTER %tmp.28 15 182 202 ];
+            %tmp.28 = getv %tmp.27 :LAYOUT_VALIGN_CENTER;
+            %tmp.29 = dup %tmp.24;
+            %tmp.30 = aputv %tmp.29 %tmp.26 %tmp.28;
+            %tmp.1 = newc %tmp.4 (%tmp.30);
+            lputv %rez_cmp_local_bitmap_id_monkey.1 %tmp.1;
+            symbol [ rez_cmp_local_bitmap_id_monkey %rez_cmp_local_bitmap_id_monkey.1 15 16 46 ];
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 16 12 ]
+            %tmp.31 = lgetv %rez_cmp_local_bitmap_id_monkey.1;
+            symbol [ rez_cmp_local_bitmap_id_monkey %tmp.31 16 12 42 ];
+            symbol [ setLocation %tmp.32 16 43 54 ];
+            %tmp.32 = getv function %tmp.31 :setLocation;
+            %tmp.33 = lgetv %dc;
+            symbol [ dc %tmp.33 16 57 59 ];
+            symbol [ getWidth %tmp.34 16 60 68 ];
+            %tmp.34 = getv function %tmp.33 :getWidth;
+            %tmp.35 = invoke %tmp.33 %tmp.34();
+            %tmp.36 = lgetv %rez_cmp_local_bitmap_id_monkey.1;
+            symbol [ rez_cmp_local_bitmap_id_monkey %tmp.36 16 73 103 ];
+            symbol [ width %tmp.37 16 104 109 ];
+            %tmp.37 = getv %tmp.36 :width;
+            %tmp.38 = sub %tmp.35 %tmp.37;
+            %tmp.39 = 0.5;
+            %tmp.40 = mul %tmp.38 %tmp.39;
+            %tmp.41 = lgetv %dc;
+            symbol [ dc %tmp.41 16 121 123 ];
+            symbol [ getHeight %tmp.42 16 124 133 ];
+            %tmp.42 = getv function %tmp.41 :getHeight;
+            %tmp.43 = invoke %tmp.41 %tmp.42();
+            %tmp.44 = lgetv %rez_cmp_local_bitmap_id_monkey.1;
+            symbol [ rez_cmp_local_bitmap_id_monkey %tmp.44 16 138 168 ];
+            symbol [ height %tmp.45 16 169 175 ];
+            %tmp.45 = getv %tmp.44 :height;
+            %tmp.46 = sub %tmp.43 %tmp.45;
+            %tmp.47 = 0.5;
+            %tmp.48 = mul %tmp.46 %tmp.47;
+            invoke %tmp.31 %tmp.32(%tmp.40, %tmp.48);
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 18 12 ]
+            %tmp.49 = newa 1 Array<WatchUi.Drawable>;
+            symbol [ Array %tmp.49 18 55 60 ];
+            symbol [ WatchUi %tmp.49 18 61 68 ];
+            symbol [ Drawable %tmp.49 18 69 77 ];
+            %tmp.50 = lgetv %rez_cmp_local_bitmap_id_monkey.1;
+            symbol [ rez_cmp_local_bitmap_id_monkey %tmp.50 18 20 50 ];
+            %tmp.51 = dup %tmp.49;
+            %tmp.52 = aputv %tmp.51 0 %tmp.50;
+            ret %tmp.52;
+_home_jon_repos_ciq_lights_lights_gen_006_B4585_00_source_Rez_mcgen_14_74_19_8_stop:
+        }
+    }
+    [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 22; @symbol_moduledef = [Strings,22,11,18]; ]
+    module Strings {
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 22; ]
+        <init> {
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 23; @position = 27; initialized = true; @symbol_vardef = [AppName,23,27,34]; @symbol_type<0> = [ResourceId,23,38,48]; ]
+        var AppName as ResourceId;
+    }
+    [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 26; @symbol_moduledef = [Styles,26,11,17]; ]
+    module Styles {
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 26; ]
+        <init> {
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 27; @symbol_moduledef = [prompt_font_enhanced_readability__body_with_title,27,15,64]; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 27; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 28; @position = 18; @symbol_constdef = [exclude,28,18,25]; @symbol_type<0> = [Boolean,28,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 31; @symbol_moduledef = [system_size__menu_header,31,15,39]; ]
+        module system_size__menu_header {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 31; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 32; @position = 18; @symbol_constdef = [width,32,18,23]; @symbol_type<0> = [Number,32,27,33]; ]
+            const width as Number = 175;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 33; @position = 18; @symbol_constdef = [height,33,18,24]; @symbol_type<0> = [Number,33,28,34]; ]
+            const height as Number = 62;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 36; @symbol_moduledef = [system_loc__hint_button_left_bottom,36,15,50]; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 36; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 37; @position = 18; @symbol_constdef = [exclude,37,18,25]; @symbol_type<0> = [Boolean,37,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 40; @symbol_moduledef = [prompt_font_enhanced_readability__body_no_title,40,15,62]; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 40; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 41; @position = 18; @symbol_constdef = [exclude,41,18,25]; @symbol_type<0> = [Boolean,41,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 44; @symbol_moduledef = [prompt_loc__body_no_title,44,15,40]; ]
+        module prompt_loc__body_no_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 44; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 45; @position = 18; @symbol_constdef = [x,45,18,19]; @symbol_type<0> = [Number,45,23,29]; ]
+            const x as Number = 5;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 46; @position = 18; @symbol_constdef = [y,46,18,19]; @symbol_type<0> = [Number,46,23,29]; ]
+            const y as Number = 77;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 49; @symbol_moduledef = [system_icon_dark__about,49,15,38]; ]
+        module system_icon_dark__about {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 49; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 50; @position = 18; @symbol_constdef = [filename,50,18,26]; @symbol_type<0> = [String,50,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__about.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 51; @position = 18; @symbol_constdef = [disableTransparency,51,18,37]; @symbol_type<0> = [Boolean,51,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 52; @position = 18; @symbol_constdef = [dithering,52,18,27]; @symbol_type<0> = [String,52,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 53; @position = 18; @symbol_constdef = [automaticPalette,53,18,34]; @symbol_type<0> = [Boolean,53,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 56; @symbol_moduledef = [system_icon_light__question,56,15,42]; ]
+        module system_icon_light__question {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 56; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 57; @position = 18; @symbol_constdef = [filename,57,18,26]; @symbol_type<0> = [String,57,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__question.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 58; @position = 18; @symbol_constdef = [disableTransparency,58,18,37]; @symbol_type<0> = [Boolean,58,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 59; @position = 18; @symbol_constdef = [dithering,59,18,27]; @symbol_type<0> = [String,59,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 60; @position = 18; @symbol_constdef = [automaticPalette,60,18,34]; @symbol_type<0> = [Boolean,60,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 63; @symbol_moduledef = [system_loc__hint_button_left_top,63,15,47]; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 63; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 64; @position = 18; @symbol_constdef = [exclude,64,18,25]; @symbol_type<0> = [Boolean,64,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 67; @symbol_moduledef = [prompt_font__title,67,15,33]; ]
+        module prompt_font__title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 67; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 68 18 ]
+                symbol [ Graphics %tmp.53 68 34 42 ];
+                %tmp.53 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_RIGHT %tmp.54 68 43 61 ];
+                %tmp.54 = getv %tmp.53 :TEXT_JUSTIFY_RIGHT;
+                symbol [ Graphics %tmp.55 68 62 70 ];
+                %tmp.55 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.56 68 71 91 ];
+                %tmp.56 = getv %tmp.55 :TEXT_JUSTIFY_VCENTER;
+                %tmp.57 = bitor %tmp.54 %tmp.56;
+                putv self :justification %tmp.57;
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 69 18 ]
+                symbol [ Graphics %tmp.58 69 25 33 ];
+                %tmp.58 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.59 69 34 43 ];
+                %tmp.59 = getv %tmp.58 :FONT_TINY;
+                putv self :font %tmp.59;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 68; @position = 18; @symbol_constdef = [justification,68,18,31]; ]
+            const justification;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 69; @position = 18; @symbol_constdef = [font,69,18,22]; ]
+            const font;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 72; @symbol_moduledef = [system_icon_dark__discard,72,15,40]; ]
+        module system_icon_dark__discard {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 72; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 73; @position = 18; @symbol_constdef = [filename,73,18,26]; @symbol_type<0> = [String,73,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__discard.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 74; @position = 18; @symbol_constdef = [disableTransparency,74,18,37]; @symbol_type<0> = [Boolean,74,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 75; @position = 18; @symbol_constdef = [dithering,75,18,27]; @symbol_type<0> = [String,75,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 76; @position = 18; @symbol_constdef = [automaticPalette,76,18,34]; @symbol_type<0> = [Boolean,76,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 79; @symbol_moduledef = [system_size__menu_item,79,15,37]; ]
+        module system_size__menu_item {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 79; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 80; @position = 18; @symbol_constdef = [width,80,18,23]; @symbol_type<0> = [Number,80,27,33]; ]
+            const width as Number = 175;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 81; @position = 18; @symbol_constdef = [height,81,18,24]; @symbol_type<0> = [Number,81,28,34]; ]
+            const height as Number = 58;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 84; @symbol_moduledef = [system_color_dark__text,84,15,38]; ]
+        module system_color_dark__text {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 84; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 86 18 ]
+                symbol [ Graphics %tmp.60 86 31 39 ];
+                %tmp.60 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.61 86 40 57 ];
+                %tmp.61 = getv %tmp.60 :COLOR_TRANSPARENT;
+                putv self :background %tmp.61;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 85; @position = 18; @symbol_constdef = [color,85,18,23]; @symbol_type<0> = [Number,85,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 86; @position = 18; @symbol_constdef = [background,86,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 89; @symbol_moduledef = [system_icon_destructive__discard,89,15,47]; ]
+        module system_icon_destructive__discard {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 89; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 90; @position = 18; @symbol_constdef = [filename,90,18,26]; @symbol_type<0> = [String,90,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__discard.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 91; @position = 18; @symbol_constdef = [disableTransparency,91,18,37]; @symbol_type<0> = [Boolean,91,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 92; @position = 18; @symbol_constdef = [dithering,92,18,27]; @symbol_type<0> = [String,92,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 93; @position = 18; @symbol_constdef = [automaticPalette,93,18,34]; @symbol_type<0> = [Boolean,93,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 96; @symbol_moduledef = [system_icon_dark__hint_action_menu,96,15,49]; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 96; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 97; @position = 18; @symbol_constdef = [filename,97,18,26]; @symbol_type<0> = [String,97,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 98; @position = 18; @symbol_constdef = [disableTransparency,98,18,37]; @symbol_type<0> = [Boolean,98,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 99; @position = 18; @symbol_constdef = [dithering,99,18,27]; @symbol_type<0> = [String,99,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 100; @position = 18; @symbol_constdef = [automaticPalette,100,18,34]; @symbol_type<0> = [Boolean,100,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 103; @symbol_moduledef = [prompt_size__title,103,15,33]; ]
+        module prompt_size__title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 103; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 104; @position = 18; @symbol_constdef = [width,104,18,23]; @symbol_type<0> = [Number,104,27,33]; ]
+            const width as Number = 67;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 105; @position = 18; @symbol_constdef = [height,105,18,24]; @symbol_type<0> = [Number,105,28,34]; ]
+            const height as Number = 60;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 108; @symbol_moduledef = [confirmation_font__body,108,15,38]; ]
+        module confirmation_font__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 108; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 109 18 ]
+                symbol [ Graphics %tmp.62 109 34 42 ];
+                %tmp.62 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.63 109 43 62 ];
+                %tmp.63 = getv %tmp.62 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.63;
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 110 18 ]
+                symbol [ Graphics %tmp.64 110 25 33 ];
+                %tmp.64 = getm $.Toybox.Graphics;
+                symbol [ FONT_XTINY %tmp.65 110 34 44 ];
+                %tmp.65 = getv %tmp.64 :FONT_XTINY;
+                putv self :font %tmp.65;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 109; @position = 18; @symbol_constdef = [justification,109,18,31]; ]
+            const justification;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 110; @position = 18; @symbol_constdef = [font,110,18,22]; ]
+            const font;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 113; @symbol_moduledef = [system_color_dark__background,113,15,44]; ]
+        module system_color_dark__background {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 113; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 114; @position = 18; @symbol_constdef = [color,114,18,23]; @symbol_type<0> = [Number,114,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 115; @position = 18; @symbol_constdef = [background,115,18,28]; @symbol_type<0> = [Number,115,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 118; @symbol_moduledef = [system_icon_destructive__hint_button_left_top,118,15,60]; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 118; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 119; @position = 18; @symbol_constdef = [exclude,119,18,25]; @symbol_type<0> = [Boolean,119,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 122; @symbol_moduledef = [system_size__launch_icon,122,15,39]; ]
+        module system_size__launch_icon {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 122; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 123; @position = 18; @symbol_constdef = [scaleX,123,18,24]; @symbol_type<0> = [Number,123,28,34]; ]
+            const scaleX as Number = 62;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 124; @position = 18; @symbol_constdef = [scaleY,124,18,24]; @symbol_type<0> = [Number,124,28,34]; ]
+            const scaleY as Number = 62;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 125; @position = 18; @symbol_constdef = [scaleRelativeTo,125,18,33]; @symbol_type<0> = [String,125,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 128; @symbol_moduledef = [confirmation_input__confirm,128,15,42]; ]
+        module confirmation_input__confirm {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 128; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 129 18 ]
+                symbol [ WatchUi %tmp.66 129 27 34 ];
+                %tmp.66 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.67 129 35 44 ];
+                %tmp.67 = getv %tmp.66 :KEY_ENTER;
+                putv self :button %tmp.67;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 129; @position = 18; @symbol_constdef = [button,129,18,24]; ]
+            const button;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 132; @symbol_moduledef = [prompt_font__body_with_title,132,15,43]; ]
+        module prompt_font__body_with_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 132; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 133 18 ]
+                symbol [ Graphics %tmp.68 133 34 42 ];
+                %tmp.68 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.69 133 43 62 ];
+                %tmp.69 = getv %tmp.68 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.69;
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 134 18 ]
+                symbol [ Graphics %tmp.70 134 25 33 ];
+                %tmp.70 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.71 134 34 43 ];
+                %tmp.71 = getv %tmp.70 :FONT_TINY;
+                putv self :font %tmp.71;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 133; @position = 18; @symbol_constdef = [justification,133,18,31]; ]
+            const justification;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 134; @position = 18; @symbol_constdef = [font,134,18,22]; ]
+            const font;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 137; @symbol_moduledef = [confirmation_loc__body,137,15,37]; ]
+        module confirmation_loc__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 137; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 138; @position = 18; @symbol_constdef = [x,138,18,19]; @symbol_type<0> = [Number,138,23,29]; ]
+            const x as Number = 2;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 139; @position = 18; @symbol_constdef = [y,139,18,19]; @symbol_type<0> = [Number,139,23,29]; ]
+            const y as Number = 81;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 142; @symbol_moduledef = [system_icon_destructive__hint_button_left_bottom,142,15,63]; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 142; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 143; @position = 18; @symbol_constdef = [exclude,143,18,25]; @symbol_type<0> = [Boolean,143,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 146; @symbol_moduledef = [prompt_color_dark__background,146,15,44]; ]
+        module prompt_color_dark__background {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 146; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 147; @position = 18; @symbol_constdef = [background,147,18,28]; @symbol_type<0> = [Number,147,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 150; @symbol_moduledef = [system_icon_destructive__hint_action_menu,150,15,56]; ]
+        module system_icon_destructive__hint_action_menu {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 150; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 151; @position = 18; @symbol_constdef = [filename,151,18,26]; @symbol_type<0> = [String,151,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 152; @position = 18; @symbol_constdef = [disableTransparency,152,18,37]; @symbol_type<0> = [Boolean,152,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 153; @position = 18; @symbol_constdef = [dithering,153,18,27]; @symbol_type<0> = [String,153,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 154; @position = 18; @symbol_constdef = [automaticPalette,154,18,34]; @symbol_type<0> = [Boolean,154,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 157; @symbol_moduledef = [system_loc__hint_action_menu,157,15,43]; ]
+        module system_loc__hint_action_menu {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 157; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 158; @position = 18; @symbol_constdef = [x,158,18,19]; @symbol_type<0> = [Number,158,23,29]; ]
+            const x as Number = 166;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 159; @position = 18; @symbol_constdef = [y,159,18,19]; @symbol_type<0> = [Number,159,23,29]; ]
+            const y as Number = 31;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 160; @position = 18; @symbol_constdef = [horizontalJustification,160,18,41]; @symbol_type<0> = [String,160,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 161; @position = 18; @symbol_constdef = [verticalJustification,161,18,39]; @symbol_type<0> = [String,161,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 164; @symbol_moduledef = [confirmation_icon__hint_confirm,164,15,46]; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 164; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 165; @position = 18; @symbol_constdef = [filename,165,18,26]; @symbol_type<0> = [String,165,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_completion.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 166; @position = 18; @symbol_constdef = [disableTransparency,166,18,37]; @symbol_type<0> = [Boolean,166,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 167; @position = 18; @symbol_constdef = [dithering,167,18,27]; @symbol_type<0> = [String,167,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 168; @position = 18; @symbol_constdef = [automaticPalette,168,18,34]; @symbol_type<0> = [Boolean,168,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 171; @symbol_moduledef = [system_loc__hint_button_left_middle,171,15,50]; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 171; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 172; @position = 18; @symbol_constdef = [exclude,172,18,25]; @symbol_type<0> = [Boolean,172,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 175; @symbol_moduledef = [prompt_size__body_no_title,175,15,41]; ]
+        module prompt_size__body_no_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 175; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 176; @position = 18; @symbol_constdef = [width,176,18,23]; @symbol_type<0> = [Number,176,27,33]; ]
+            const width as Number = 166;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 177; @position = 18; @symbol_constdef = [height,177,18,24]; @symbol_type<0> = [Number,177,28,34]; ]
+            const height as Number = 99;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 180; @symbol_moduledef = [system_icon_light__hint_button_left_top,180,15,54]; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 180; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 181; @position = 18; @symbol_constdef = [exclude,181,18,25]; @symbol_type<0> = [Boolean,181,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 184; @symbol_moduledef = [prompt_color_light__background,184,15,45]; ]
+        module prompt_color_light__background {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 184; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 185; @position = 18; @symbol_constdef = [background,185,18,28]; @symbol_type<0> = [Number,185,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 188; @symbol_moduledef = [confirmation_input__delete,188,15,41]; ]
+        module confirmation_input__delete {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 188; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 189 18 ]
+                symbol [ WatchUi %tmp.72 189 27 34 ];
+                %tmp.72 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.73 189 35 44 ];
+                %tmp.73 = getv %tmp.72 :KEY_ENTER;
+                putv self :button %tmp.73;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 189; @position = 18; @symbol_constdef = [button,189,18,24]; ]
+            const button;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 192; @symbol_moduledef = [system_icon_dark__hint_button_left_top,192,15,53]; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 192; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 193; @position = 18; @symbol_constdef = [exclude,193,18,25]; @symbol_type<0> = [Boolean,193,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 196; @symbol_moduledef = [system_input__action_menu,196,15,40]; ]
+        module system_input__action_menu {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 196; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 197 18 ]
+                symbol [ WatchUi %tmp.74 197 27 34 ];
+                %tmp.74 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.75 197 35 44 ];
+                %tmp.75 = getv %tmp.74 :KEY_ENTER;
+                putv self :button %tmp.75;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 197; @position = 18; @symbol_constdef = [button,197,18,24]; ]
+            const button;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 200; @symbol_moduledef = [system_icon_light__save,200,15,38]; ]
+        module system_icon_light__save {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 200; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 201; @position = 18; @symbol_constdef = [filename,201,18,26]; @symbol_type<0> = [String,201,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__save.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 202; @position = 18; @symbol_constdef = [disableTransparency,202,18,37]; @symbol_type<0> = [Boolean,202,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 203; @position = 18; @symbol_constdef = [dithering,203,18,27]; @symbol_type<0> = [String,203,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 204; @position = 18; @symbol_constdef = [automaticPalette,204,18,34]; @symbol_type<0> = [Boolean,204,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 207; @symbol_moduledef = [prompt_color_light__body,207,15,39]; ]
+        module prompt_color_light__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 207; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 209 18 ]
+                symbol [ Graphics %tmp.76 209 31 39 ];
+                %tmp.76 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.77 209 40 57 ];
+                %tmp.77 = getv %tmp.76 :COLOR_TRANSPARENT;
+                putv self :background %tmp.77;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 208; @position = 18; @symbol_constdef = [color,208,18,23]; @symbol_type<0> = [Number,208,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 209; @position = 18; @symbol_constdef = [background,209,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 212; @symbol_moduledef = [system_loc__subwindow,212,15,36]; ]
+        module system_loc__subwindow {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 212; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 213; @position = 18; @symbol_constdef = [x,213,18,19]; @symbol_type<0> = [Number,213,23,29]; ]
+            const x as Number = 114;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 214; @position = 18; @symbol_constdef = [y,214,18,19]; @symbol_type<0> = [Number,214,23,29]; ]
+            const y as Number = 0;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 217; @symbol_moduledef = [system_icon_light__warning,217,15,41]; ]
+        module system_icon_light__warning {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 217; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 218; @position = 18; @symbol_constdef = [filename,218,18,26]; @symbol_type<0> = [String,218,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__warning.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 219; @position = 18; @symbol_constdef = [disableTransparency,219,18,37]; @symbol_type<0> = [Boolean,219,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 220; @position = 18; @symbol_constdef = [dithering,220,18,27]; @symbol_type<0> = [String,220,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 221; @position = 18; @symbol_constdef = [automaticPalette,221,18,34]; @symbol_type<0> = [Boolean,221,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 224; @symbol_moduledef = [confirmation_color_light__body,224,15,45]; ]
+        module confirmation_color_light__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 224; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 226 18 ]
+                symbol [ Graphics %tmp.78 226 31 39 ];
+                %tmp.78 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.79 226 40 57 ];
+                %tmp.79 = getv %tmp.78 :COLOR_TRANSPARENT;
+                putv self :background %tmp.79;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 225; @position = 18; @symbol_constdef = [color,225,18,23]; @symbol_type<0> = [Number,225,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 226; @position = 18; @symbol_constdef = [background,226,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 229; @symbol_moduledef = [confirmation_icon_light__hint_keep,229,15,49]; ]
+        module confirmation_icon_light__hint_keep {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 229; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 230; @position = 18; @symbol_constdef = [filename,230,18,26]; @symbol_type<0> = [String,230,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_keep.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 231; @position = 18; @symbol_constdef = [disableTransparency,231,18,37]; @symbol_type<0> = [Boolean,231,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 232; @position = 18; @symbol_constdef = [dithering,232,18,27]; @symbol_type<0> = [String,232,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 233; @position = 18; @symbol_constdef = [automaticPalette,233,18,34]; @symbol_type<0> = [Boolean,233,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 236; @symbol_moduledef = [activity_color_light__background,236,15,47]; ]
+        module activity_color_light__background {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 236; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 237; @position = 18; @symbol_constdef = [color,237,18,23]; @symbol_type<0> = [Number,237,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 238; @position = 18; @symbol_constdef = [background,238,18,28]; @symbol_type<0> = [Number,238,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 241; @symbol_moduledef = [system_icon_positive__hint_button_right_top,241,15,58]; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 241; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 242; @position = 18; @symbol_constdef = [filename,242,18,26]; @symbol_type<0> = [String,242,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_positive__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 243; @position = 18; @symbol_constdef = [disableTransparency,243,18,37]; @symbol_type<0> = [Boolean,243,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 244; @position = 18; @symbol_constdef = [dithering,244,18,27]; @symbol_type<0> = [String,244,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 245; @position = 18; @symbol_constdef = [automaticPalette,245,18,34]; @symbol_type<0> = [Boolean,245,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 248; @symbol_moduledef = [system_size__screen,248,15,34]; ]
+        module system_size__screen {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 248; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 249; @position = 18; @symbol_constdef = [width,249,18,23]; @symbol_type<0> = [Number,249,27,33]; ]
+            const width as Number = 176;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 250; @position = 18; @symbol_constdef = [height,250,18,24]; @symbol_type<0> = [Number,250,28,34]; ]
+            const height as Number = 176;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 253; @symbol_moduledef = [system_icon_destructive__hint_button_right_bottom,253,15,64]; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 253; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 254; @position = 18; @symbol_constdef = [exclude,254,18,25]; @symbol_type<0> = [Boolean,254,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 257; @symbol_moduledef = [system_color_light__background,257,15,45]; ]
+        module system_color_light__background {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 257; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 258; @position = 18; @symbol_constdef = [color,258,18,23]; @symbol_type<0> = [Number,258,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 259; @position = 18; @symbol_constdef = [background,259,18,28]; @symbol_type<0> = [Number,259,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 262; @symbol_moduledef = [system_icon_destructive__hint_button_right_top,262,15,61]; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 262; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 263; @position = 18; @symbol_constdef = [filename,263,18,26]; @symbol_type<0> = [String,263,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 264; @position = 18; @symbol_constdef = [disableTransparency,264,18,37]; @symbol_type<0> = [Boolean,264,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 265; @position = 18; @symbol_constdef = [dithering,265,18,27]; @symbol_type<0> = [String,265,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 266; @position = 18; @symbol_constdef = [automaticPalette,266,18,34]; @symbol_type<0> = [Boolean,266,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 269; @symbol_moduledef = [confirmation_loc__hint_confirm,269,15,45]; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 269; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 270; @position = 18; @symbol_constdef = [x,270,18,19]; @symbol_type<0> = [Number,270,23,29]; ]
+            const x as Number = 113;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 271; @position = 18; @symbol_constdef = [y,271,18,19]; @symbol_type<0> = [Number,271,23,29]; ]
+            const y as Number = 1;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 274; @symbol_moduledef = [activity_color_dark__text,274,15,40]; ]
+        module activity_color_dark__text {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 274; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 276 18 ]
+                symbol [ Graphics %tmp.80 276 31 39 ];
+                %tmp.80 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.81 276 40 57 ];
+                %tmp.81 = getv %tmp.80 :COLOR_TRANSPARENT;
+                putv self :background %tmp.81;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 275; @position = 18; @symbol_constdef = [color,275,18,23]; @symbol_type<0> = [Number,275,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 276; @position = 18; @symbol_constdef = [background,276,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 279; @symbol_moduledef = [confirmation_input__keep,279,15,39]; ]
+        module confirmation_input__keep {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 279; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 280 18 ]
+                symbol [ WatchUi %tmp.82 280 27 34 ];
+                %tmp.82 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.83 280 35 43 ];
+                %tmp.83 = getv %tmp.82 :KEY_DOWN;
+                putv self :button %tmp.83;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 280; @position = 18; @symbol_constdef = [button,280,18,24]; ]
+            const button;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 283; @symbol_moduledef = [prompt_loc__body_with_title,283,15,42]; ]
+        module prompt_loc__body_with_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 283; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 284; @position = 18; @symbol_constdef = [x,284,18,19]; @symbol_type<0> = [Number,284,23,29]; ]
+            const x as Number = 5;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 285; @position = 18; @symbol_constdef = [y,285,18,19]; @symbol_type<0> = [Number,285,23,29]; ]
+            const y as Number = 77;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 288; @symbol_moduledef = [system_icon_dark__search,288,15,39]; ]
+        module system_icon_dark__search {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 288; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 289; @position = 18; @symbol_constdef = [filename,289,18,26]; @symbol_type<0> = [String,289,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__search.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 290; @position = 18; @symbol_constdef = [disableTransparency,290,18,37]; @symbol_type<0> = [Boolean,290,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 291; @position = 18; @symbol_constdef = [dithering,291,18,27]; @symbol_type<0> = [String,291,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 292; @position = 18; @symbol_constdef = [automaticPalette,292,18,34]; @symbol_type<0> = [Boolean,292,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 295; @symbol_moduledef = [activity_color_light__text,295,15,41]; ]
+        module activity_color_light__text {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 295; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 297 18 ]
+                symbol [ Graphics %tmp.84 297 31 39 ];
+                %tmp.84 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.85 297 40 57 ];
+                %tmp.85 = getv %tmp.84 :COLOR_TRANSPARENT;
+                putv self :background %tmp.85;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 296; @position = 18; @symbol_constdef = [color,296,18,23]; @symbol_type<0> = [Number,296,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 297; @position = 18; @symbol_constdef = [background,297,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 300; @symbol_moduledef = [confirmation_icon__hint_keep,300,15,43]; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 300; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 301; @position = 18; @symbol_constdef = [filename,301,18,26]; @symbol_type<0> = [String,301,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_keep.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 302; @position = 18; @symbol_constdef = [disableTransparency,302,18,37]; @symbol_type<0> = [Boolean,302,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 303; @position = 18; @symbol_constdef = [dithering,303,18,27]; @symbol_type<0> = [String,303,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 304; @position = 18; @symbol_constdef = [automaticPalette,304,18,34]; @symbol_type<0> = [Boolean,304,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 307; @symbol_moduledef = [system_icon_dark__save,307,15,37]; ]
+        module system_icon_dark__save {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 307; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 308; @position = 18; @symbol_constdef = [filename,308,18,26]; @symbol_type<0> = [String,308,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__save.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 309; @position = 18; @symbol_constdef = [disableTransparency,309,18,37]; @symbol_type<0> = [Boolean,309,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 310; @position = 18; @symbol_constdef = [dithering,310,18,27]; @symbol_type<0> = [String,310,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 311; @position = 18; @symbol_constdef = [automaticPalette,311,18,34]; @symbol_type<0> = [Boolean,311,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 314; @symbol_moduledef = [system_icon_destructive__hint_button_left_middle,314,15,63]; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 314; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 315; @position = 18; @symbol_constdef = [exclude,315,18,25]; @symbol_type<0> = [Boolean,315,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 318; @symbol_moduledef = [system_icon_light__search,318,15,40]; ]
+        module system_icon_light__search {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 318; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 319; @position = 18; @symbol_constdef = [filename,319,18,26]; @symbol_type<0> = [String,319,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__search.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 320; @position = 18; @symbol_constdef = [disableTransparency,320,18,37]; @symbol_type<0> = [Boolean,320,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 321; @position = 18; @symbol_constdef = [dithering,321,18,27]; @symbol_type<0> = [String,321,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 322; @position = 18; @symbol_constdef = [automaticPalette,322,18,34]; @symbol_type<0> = [Boolean,322,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 325; @symbol_moduledef = [system_icon_dark__hint_button_left_bottom,325,15,56]; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 325; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 326; @position = 18; @symbol_constdef = [exclude,326,18,25]; @symbol_type<0> = [Boolean,326,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 329; @symbol_moduledef = [system_icon_positive__hint_button_left_top,329,15,57]; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 329; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 330; @position = 18; @symbol_constdef = [exclude,330,18,25]; @symbol_type<0> = [Boolean,330,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 333; @symbol_moduledef = [system_loc__hint_button_right_bottom,333,15,51]; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 333; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 334; @position = 18; @symbol_constdef = [exclude,334,18,25]; @symbol_type<0> = [Boolean,334,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 337; @symbol_moduledef = [confirmation_icon_dark__hint_reject,337,15,50]; ]
+        module confirmation_icon_dark__hint_reject {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 337; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 338; @position = 18; @symbol_constdef = [filename,338,18,26]; @symbol_type<0> = [String,338,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_reject.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 339; @position = 18; @symbol_constdef = [disableTransparency,339,18,37]; @symbol_type<0> = [Boolean,339,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 340; @position = 18; @symbol_constdef = [dithering,340,18,27]; @symbol_type<0> = [String,340,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 341; @position = 18; @symbol_constdef = [automaticPalette,341,18,34]; @symbol_type<0> = [Boolean,341,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 344; @symbol_moduledef = [confirmation_color_dark__body,344,15,44]; ]
+        module confirmation_color_dark__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 344; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 346 18 ]
+                symbol [ Graphics %tmp.86 346 31 39 ];
+                %tmp.86 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.87 346 40 57 ];
+                %tmp.87 = getv %tmp.86 :COLOR_TRANSPARENT;
+                putv self :background %tmp.87;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 345; @position = 18; @symbol_constdef = [color,345,18,23]; @symbol_type<0> = [Number,345,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 346; @position = 18; @symbol_constdef = [background,346,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 349; @symbol_moduledef = [confirmation_icon_light__hint_confirm,349,15,52]; ]
+        module confirmation_icon_light__hint_confirm {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 349; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 350; @position = 18; @symbol_constdef = [filename,350,18,26]; @symbol_type<0> = [String,350,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_completion.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 351; @position = 18; @symbol_constdef = [disableTransparency,351,18,37]; @symbol_type<0> = [Boolean,351,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 352; @position = 18; @symbol_constdef = [dithering,352,18,27]; @symbol_type<0> = [String,352,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 353; @position = 18; @symbol_constdef = [automaticPalette,353,18,34]; @symbol_type<0> = [Boolean,353,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 356; @symbol_moduledef = [prompt_color_dark__title,356,15,39]; ]
+        module prompt_color_dark__title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 356; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 358 18 ]
+                symbol [ Graphics %tmp.88 358 31 39 ];
+                %tmp.88 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.89 358 40 57 ];
+                %tmp.89 = getv %tmp.88 :COLOR_TRANSPARENT;
+                putv self :background %tmp.89;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 357; @position = 18; @symbol_constdef = [color,357,18,23]; @symbol_type<0> = [Number,357,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 358; @position = 18; @symbol_constdef = [background,358,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 361; @symbol_moduledef = [system_icon_destructive__cancel,361,15,46]; ]
+        module system_icon_destructive__cancel {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 361; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 362; @position = 18; @symbol_constdef = [filename,362,18,26]; @symbol_type<0> = [String,362,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__cancel.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 363; @position = 18; @symbol_constdef = [disableTransparency,363,18,37]; @symbol_type<0> = [Boolean,363,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 364; @position = 18; @symbol_constdef = [dithering,364,18,27]; @symbol_type<0> = [String,364,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 365; @position = 18; @symbol_constdef = [automaticPalette,365,18,34]; @symbol_type<0> = [Boolean,365,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 368; @symbol_moduledef = [system_icon_light__hint_button_right_bottom,368,15,58]; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 368; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 369; @position = 18; @symbol_constdef = [exclude,369,18,25]; @symbol_type<0> = [Boolean,369,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 372; @symbol_moduledef = [prompt_loc__title,372,15,32]; ]
+        module prompt_loc__title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 372; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 373; @position = 18; @symbol_constdef = [x,373,18,19]; @symbol_type<0> = [Number,373,23,29]; ]
+            const x as Number = 25;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 374; @position = 18; @symbol_constdef = [y,374,18,19]; @symbol_type<0> = [Number,374,23,29]; ]
+            const y as Number = 9;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 377; @symbol_moduledef = [confirmation_font_enhanced_readability__body,377,15,59]; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 377; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 378; @position = 18; @symbol_constdef = [exclude,378,18,25]; @symbol_type<0> = [Boolean,378,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 381; @symbol_moduledef = [prompt_color_light__title,381,15,40]; ]
+        module prompt_color_light__title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 381; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 383 18 ]
+                symbol [ Graphics %tmp.90 383 31 39 ];
+                %tmp.90 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.91 383 40 57 ];
+                %tmp.91 = getv %tmp.90 :COLOR_TRANSPARENT;
+                putv self :background %tmp.91;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 382; @position = 18; @symbol_constdef = [color,382,18,23]; @symbol_type<0> = [Number,382,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 383; @position = 18; @symbol_constdef = [background,383,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 386; @symbol_moduledef = [system_icon_dark__hint_button_right_top,386,15,54]; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 386; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 387; @position = 18; @symbol_constdef = [filename,387,18,26]; @symbol_type<0> = [String,387,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 388; @position = 18; @symbol_constdef = [disableTransparency,388,18,37]; @symbol_type<0> = [Boolean,388,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 389; @position = 18; @symbol_constdef = [dithering,389,18,27]; @symbol_type<0> = [String,389,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 390; @position = 18; @symbol_constdef = [automaticPalette,390,18,34]; @symbol_type<0> = [Boolean,390,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 393; @symbol_moduledef = [system_icon_dark__hint_button_left_middle,393,15,56]; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 393; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 394; @position = 18; @symbol_constdef = [exclude,394,18,25]; @symbol_type<0> = [Boolean,394,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 397; @symbol_moduledef = [confirmation_icon_dark__hint_keep,397,15,48]; ]
+        module confirmation_icon_dark__hint_keep {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 397; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 398; @position = 18; @symbol_constdef = [filename,398,18,26]; @symbol_type<0> = [String,398,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_keep.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 399; @position = 18; @symbol_constdef = [disableTransparency,399,18,37]; @symbol_type<0> = [Boolean,399,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 400; @position = 18; @symbol_constdef = [dithering,400,18,27]; @symbol_type<0> = [String,400,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 401; @position = 18; @symbol_constdef = [automaticPalette,401,18,34]; @symbol_type<0> = [Boolean,401,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 404; @symbol_moduledef = [system_icon_light__cancel,404,15,40]; ]
+        module system_icon_light__cancel {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 404; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 405; @position = 18; @symbol_constdef = [filename,405,18,26]; @symbol_type<0> = [String,405,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__cancel.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 406; @position = 18; @symbol_constdef = [disableTransparency,406,18,37]; @symbol_type<0> = [Boolean,406,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 407; @position = 18; @symbol_constdef = [dithering,407,18,27]; @symbol_type<0> = [String,407,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 408; @position = 18; @symbol_constdef = [automaticPalette,408,18,34]; @symbol_type<0> = [Boolean,408,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 411; @symbol_moduledef = [confirmation_icon_light__hint_reject,411,15,51]; ]
+        module confirmation_icon_light__hint_reject {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 411; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 412; @position = 18; @symbol_constdef = [filename,412,18,26]; @symbol_type<0> = [String,412,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_reject.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 413; @position = 18; @symbol_constdef = [disableTransparency,413,18,37]; @symbol_type<0> = [Boolean,413,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 414; @position = 18; @symbol_constdef = [dithering,414,18,27]; @symbol_type<0> = [String,414,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 415; @position = 18; @symbol_constdef = [automaticPalette,415,18,34]; @symbol_type<0> = [Boolean,415,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 418; @symbol_moduledef = [system_icon_light__about,418,15,39]; ]
+        module system_icon_light__about {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 418; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 419; @position = 18; @symbol_constdef = [filename,419,18,26]; @symbol_type<0> = [String,419,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__about.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 420; @position = 18; @symbol_constdef = [disableTransparency,420,18,37]; @symbol_type<0> = [Boolean,420,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 421; @position = 18; @symbol_constdef = [dithering,421,18,27]; @symbol_type<0> = [String,421,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 422; @position = 18; @symbol_constdef = [automaticPalette,422,18,34]; @symbol_type<0> = [Boolean,422,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 425; @symbol_moduledef = [system_size__toast_icon,425,15,38]; ]
+        module system_size__toast_icon {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 425; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 426; @position = 18; @symbol_constdef = [width,426,18,23]; @symbol_type<0> = [Number,426,27,33]; ]
+            const width as Number = 44;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 427; @position = 18; @symbol_constdef = [scaleRelativeTo,427,18,33]; @symbol_type<0> = [String,427,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 430; @symbol_moduledef = [system_icon_dark__hint_button_right_middle,430,15,57]; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 430; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 431; @position = 18; @symbol_constdef = [exclude,431,18,25]; @symbol_type<0> = [Boolean,431,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 434; @symbol_moduledef = [confirmation_icon__hint_reject,434,15,45]; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 434; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 435; @position = 18; @symbol_constdef = [filename,435,18,26]; @symbol_type<0> = [String,435,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_reject.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 436; @position = 18; @symbol_constdef = [disableTransparency,436,18,37]; @symbol_type<0> = [Boolean,436,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 437; @position = 18; @symbol_constdef = [dithering,437,18,27]; @symbol_type<0> = [String,437,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 438; @position = 18; @symbol_constdef = [automaticPalette,438,18,34]; @symbol_type<0> = [Boolean,438,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 441; @symbol_moduledef = [system_icon_light__hint_action_menu,441,15,50]; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 441; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 442; @position = 18; @symbol_constdef = [filename,442,18,26]; @symbol_type<0> = [String,442,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 443; @position = 18; @symbol_constdef = [disableTransparency,443,18,37]; @symbol_type<0> = [Boolean,443,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 444; @position = 18; @symbol_constdef = [dithering,444,18,27]; @symbol_type<0> = [String,444,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 445; @position = 18; @symbol_constdef = [automaticPalette,445,18,34]; @symbol_type<0> = [Boolean,445,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 448; @symbol_moduledef = [system_icon_light__hint_button_right_middle,448,15,58]; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 448; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 449; @position = 18; @symbol_constdef = [exclude,449,18,25]; @symbol_type<0> = [Boolean,449,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 452; @symbol_moduledef = [system_icon_destructive__hint_button_right_middle,452,15,64]; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 452; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 453; @position = 18; @symbol_constdef = [exclude,453,18,25]; @symbol_type<0> = [Boolean,453,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 456; @symbol_moduledef = [confirmation_loc__hint_reject,456,15,44]; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 456; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 457; @position = 18; @symbol_constdef = [x,457,18,19]; @symbol_type<0> = [Number,457,23,29]; ]
+            const x as Number = 0;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 458; @position = 18; @symbol_constdef = [y,458,18,19]; @symbol_type<0> = [Number,458,23,29]; ]
+            const y as Number = 138;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 461; @symbol_moduledef = [confirmation_icon_dark__hint_delete,461,15,50]; ]
+        module confirmation_icon_dark__hint_delete {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 461; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 462; @position = 18; @symbol_constdef = [filename,462,18,26]; @symbol_type<0> = [String,462,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_delete.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 463; @position = 18; @symbol_constdef = [disableTransparency,463,18,37]; @symbol_type<0> = [Boolean,463,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 464; @position = 18; @symbol_constdef = [dithering,464,18,27]; @symbol_type<0> = [String,464,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 465; @position = 18; @symbol_constdef = [automaticPalette,465,18,34]; @symbol_type<0> = [Boolean,465,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 468; @symbol_moduledef = [activity_color_dark__background,468,15,46]; ]
+        module activity_color_dark__background {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 468; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 469; @position = 18; @symbol_constdef = [color,469,18,23]; @symbol_type<0> = [Number,469,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 470; @position = 18; @symbol_constdef = [background,470,18,28]; @symbol_type<0> = [Number,470,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 473; @symbol_moduledef = [system_icon_light__hint_button_left_bottom,473,15,57]; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 473; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 474; @position = 18; @symbol_constdef = [exclude,474,18,25]; @symbol_type<0> = [Boolean,474,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 477; @symbol_moduledef = [system_icon_positive__hint_button_left_middle,477,15,60]; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 477; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 478; @position = 18; @symbol_constdef = [exclude,478,18,25]; @symbol_type<0> = [Boolean,478,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 481; @symbol_moduledef = [system_size__menu_icon,481,15,37]; ]
+        module system_size__menu_icon {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 481; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 482; @position = 18; @symbol_constdef = [scaleX,482,18,24]; @symbol_type<0> = [Number,482,28,34]; ]
+            const scaleX as Number = 38;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 483; @position = 18; @symbol_constdef = [scaleY,483,18,24]; @symbol_type<0> = [Number,483,28,34]; ]
+            const scaleY as Number = 38;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 484; @position = 18; @symbol_constdef = [scaleRelativeTo,484,18,33]; @symbol_type<0> = [String,484,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 487; @symbol_moduledef = [system_icon_destructive__warning,487,15,47]; ]
+        module system_icon_destructive__warning {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 487; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 488; @position = 18; @symbol_constdef = [filename,488,18,26]; @symbol_type<0> = [String,488,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__warning.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 489; @position = 18; @symbol_constdef = [disableTransparency,489,18,37]; @symbol_type<0> = [Boolean,489,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 490; @position = 18; @symbol_constdef = [dithering,490,18,27]; @symbol_type<0> = [String,490,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 491; @position = 18; @symbol_constdef = [automaticPalette,491,18,34]; @symbol_type<0> = [Boolean,491,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 494; @symbol_moduledef = [system_loc__hint_button_right_middle,494,15,51]; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 494; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 495; @position = 18; @symbol_constdef = [exclude,495,18,25]; @symbol_type<0> = [Boolean,495,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 498; @symbol_moduledef = [system_icon_dark__cancel,498,15,39]; ]
+        module system_icon_dark__cancel {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 498; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 499; @position = 18; @symbol_constdef = [filename,499,18,26]; @symbol_type<0> = [String,499,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__cancel.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 500; @position = 18; @symbol_constdef = [disableTransparency,500,18,37]; @symbol_type<0> = [Boolean,500,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 501; @position = 18; @symbol_constdef = [dithering,501,18,27]; @symbol_type<0> = [String,501,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 502; @position = 18; @symbol_constdef = [automaticPalette,502,18,34]; @symbol_type<0> = [Boolean,502,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 505; @symbol_moduledef = [prompt_size__body_with_title,505,15,43]; ]
+        module prompt_size__body_with_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 505; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 506; @position = 18; @symbol_constdef = [width,506,18,23]; @symbol_type<0> = [Number,506,27,33]; ]
+            const width as Number = 166;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 507; @position = 18; @symbol_constdef = [height,507,18,24]; @symbol_type<0> = [Number,507,28,34]; ]
+            const height as Number = 99;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 510; @symbol_moduledef = [system_loc__hint_button_right_top,510,15,48]; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 510; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 511; @position = 18; @symbol_constdef = [x,511,18,19]; @symbol_type<0> = [Number,511,23,29]; ]
+            const x as Number = 166;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 512; @position = 18; @symbol_constdef = [y,512,18,19]; @symbol_type<0> = [Number,512,23,29]; ]
+            const y as Number = 31;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 513; @position = 18; @symbol_constdef = [horizontalJustification,513,18,41]; @symbol_type<0> = [String,513,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 514; @position = 18; @symbol_constdef = [verticalJustification,514,18,39]; @symbol_type<0> = [String,514,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 517; @symbol_moduledef = [system_color_light__text,517,15,39]; ]
+        module system_color_light__text {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 517; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 519 18 ]
+                symbol [ Graphics %tmp.92 519 31 39 ];
+                %tmp.92 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.93 519 40 57 ];
+                %tmp.93 = getv %tmp.92 :COLOR_TRANSPARENT;
+                putv self :background %tmp.93;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 518; @position = 18; @symbol_constdef = [color,518,18,23]; @symbol_type<0> = [Number,518,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 519; @position = 18; @symbol_constdef = [background,519,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 522; @symbol_moduledef = [system_icon_light__check,522,15,39]; ]
+        module system_icon_light__check {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 522; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 523; @position = 18; @symbol_constdef = [filename,523,18,26]; @symbol_type<0> = [String,523,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__check.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 524; @position = 18; @symbol_constdef = [disableTransparency,524,18,37]; @symbol_type<0> = [Boolean,524,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 525; @position = 18; @symbol_constdef = [dithering,525,18,27]; @symbol_type<0> = [String,525,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 526; @position = 18; @symbol_constdef = [automaticPalette,526,18,34]; @symbol_type<0> = [Boolean,526,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 529; @symbol_moduledef = [confirmation_input__reject,529,15,41]; ]
+        module confirmation_input__reject {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 529; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 530 18 ]
+                symbol [ WatchUi %tmp.94 530 27 34 ];
+                %tmp.94 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.95 530 35 43 ];
+                %tmp.95 = getv %tmp.94 :KEY_DOWN;
+                putv self :button %tmp.95;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 530; @position = 18; @symbol_constdef = [button,530,18,24]; ]
+            const button;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 533; @symbol_moduledef = [system_icon_light__revert,533,15,40]; ]
+        module system_icon_light__revert {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 533; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 534; @position = 18; @symbol_constdef = [filename,534,18,26]; @symbol_type<0> = [String,534,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__revert.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 535; @position = 18; @symbol_constdef = [disableTransparency,535,18,37]; @symbol_type<0> = [Boolean,535,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 536; @position = 18; @symbol_constdef = [dithering,536,18,27]; @symbol_type<0> = [String,536,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 537; @position = 18; @symbol_constdef = [automaticPalette,537,18,34]; @symbol_type<0> = [Boolean,537,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 540; @symbol_moduledef = [system_size__subwindow,540,15,37]; ]
+        module system_size__subwindow {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 540; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 541; @position = 18; @symbol_constdef = [width,541,18,23]; @symbol_type<0> = [Number,541,27,33]; ]
+            const width as Number = 62;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 542; @position = 18; @symbol_constdef = [height,542,18,24]; @symbol_type<0> = [Number,542,28,34]; ]
+            const height as Number = 62;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 545; @symbol_moduledef = [system_icon_positive__hint_button_left_bottom,545,15,60]; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 545; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 546; @position = 18; @symbol_constdef = [exclude,546,18,25]; @symbol_type<0> = [Boolean,546,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 549; @symbol_moduledef = [system_icon_dark__check,549,15,38]; ]
+        module system_icon_dark__check {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 549; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 550; @position = 18; @symbol_constdef = [filename,550,18,26]; @symbol_type<0> = [String,550,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__check.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 551; @position = 18; @symbol_constdef = [disableTransparency,551,18,37]; @symbol_type<0> = [Boolean,551,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 552; @position = 18; @symbol_constdef = [dithering,552,18,27]; @symbol_type<0> = [String,552,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 553; @position = 18; @symbol_constdef = [automaticPalette,553,18,34]; @symbol_type<0> = [Boolean,553,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 556; @symbol_moduledef = [confirmation_loc__hint_keep,556,15,42]; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 556; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 557; @position = 18; @symbol_constdef = [x,557,18,19]; @symbol_type<0> = [Number,557,23,29]; ]
+            const x as Number = 0;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 558; @position = 18; @symbol_constdef = [y,558,18,19]; @symbol_type<0> = [Number,558,23,29]; ]
+            const y as Number = 138;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 561; @symbol_moduledef = [confirmation_loc__hint_delete,561,15,44]; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 561; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 562; @position = 18; @symbol_constdef = [verticallJustification,562,18,40]; @symbol_type<0> = [String,562,44,50]; ]
+            const verticallJustification as String = "center";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 563; @position = 18; @symbol_constdef = [x,563,18,19]; @symbol_type<0> = [Number,563,23,29]; ]
+            const x as Number = 146;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 564; @position = 18; @symbol_constdef = [y,564,18,19]; @symbol_type<0> = [Number,564,23,29]; ]
+            const y as Number = 15;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 565; @position = 18; @symbol_constdef = [horizontalJustification,565,18,41]; @symbol_type<0> = [String,565,45,51]; ]
+            const horizontalJustification as String = "center";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 568; @symbol_moduledef = [system_icon_positive__hint_action_menu,568,15,53]; ]
+        module system_icon_positive__hint_action_menu {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 568; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 569; @position = 18; @symbol_constdef = [filename,569,18,26]; @symbol_type<0> = [String,569,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_positive__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 570; @position = 18; @symbol_constdef = [disableTransparency,570,18,37]; @symbol_type<0> = [Boolean,570,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 571; @position = 18; @symbol_constdef = [dithering,571,18,27]; @symbol_type<0> = [String,571,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 572; @position = 18; @symbol_constdef = [automaticPalette,572,18,34]; @symbol_type<0> = [Boolean,572,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 575; @symbol_moduledef = [system_icon_positive__hint_button_right_middle,575,15,61]; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 575; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 576; @position = 18; @symbol_constdef = [exclude,576,18,25]; @symbol_type<0> = [Boolean,576,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 579; @symbol_moduledef = [system_icon_light__hint_button_left_middle,579,15,57]; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 579; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 580; @position = 18; @symbol_constdef = [exclude,580,18,25]; @symbol_type<0> = [Boolean,580,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 583; @symbol_moduledef = [system_icon_dark__hint_button_right_bottom,583,15,57]; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 583; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 584; @position = 18; @symbol_constdef = [exclude,584,18,25]; @symbol_type<0> = [Boolean,584,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 587; @symbol_moduledef = [system_icon_positive__hint_button_right_bottom,587,15,61]; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 587; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 588; @position = 18; @symbol_constdef = [exclude,588,18,25]; @symbol_type<0> = [Boolean,588,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 591; @symbol_moduledef = [system_icon_dark__revert,591,15,39]; ]
+        module system_icon_dark__revert {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 591; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 592; @position = 18; @symbol_constdef = [filename,592,18,26]; @symbol_type<0> = [String,592,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__revert.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 593; @position = 18; @symbol_constdef = [disableTransparency,593,18,37]; @symbol_type<0> = [Boolean,593,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 594; @position = 18; @symbol_constdef = [dithering,594,18,27]; @symbol_type<0> = [String,594,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 595; @position = 18; @symbol_constdef = [automaticPalette,595,18,34]; @symbol_type<0> = [Boolean,595,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 598; @symbol_moduledef = [confirmation_icon_light__hint_delete,598,15,51]; ]
+        module confirmation_icon_light__hint_delete {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 598; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 599; @position = 18; @symbol_constdef = [filename,599,18,26]; @symbol_type<0> = [String,599,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_delete.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 600; @position = 18; @symbol_constdef = [disableTransparency,600,18,37]; @symbol_type<0> = [Boolean,600,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 601; @position = 18; @symbol_constdef = [dithering,601,18,27]; @symbol_type<0> = [String,601,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 602; @position = 18; @symbol_constdef = [automaticPalette,602,18,34]; @symbol_type<0> = [Boolean,602,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 605; @symbol_moduledef = [system_icon_dark__question,605,15,41]; ]
+        module system_icon_dark__question {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 605; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 606; @position = 18; @symbol_constdef = [filename,606,18,26]; @symbol_type<0> = [String,606,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__question.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 607; @position = 18; @symbol_constdef = [disableTransparency,607,18,37]; @symbol_type<0> = [Boolean,607,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 608; @position = 18; @symbol_constdef = [dithering,608,18,27]; @symbol_type<0> = [String,608,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 609; @position = 18; @symbol_constdef = [automaticPalette,609,18,34]; @symbol_type<0> = [Boolean,609,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 612; @symbol_moduledef = [system_icon_light__discard,612,15,41]; ]
+        module system_icon_light__discard {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 612; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 613; @position = 18; @symbol_constdef = [filename,613,18,26]; @symbol_type<0> = [String,613,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__discard.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 614; @position = 18; @symbol_constdef = [disableTransparency,614,18,37]; @symbol_type<0> = [Boolean,614,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 615; @position = 18; @symbol_constdef = [dithering,615,18,27]; @symbol_type<0> = [String,615,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 616; @position = 18; @symbol_constdef = [automaticPalette,616,18,34]; @symbol_type<0> = [Boolean,616,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 619; @symbol_moduledef = [device_info,619,15,26]; ]
+        module device_info {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 619; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 621 18 ]
+                symbol [ Toybox %tmp.97 621 32 38 ];
+                %tmp.97 = getv ? :Toybox;
+                symbol [ System %tmp.98 621 39 45 ];
+                %tmp.98 = getv %tmp.97 :System;
+                symbol [ SCREEN_SHAPE_SEMI_OCTAGON %tmp.99 621 46 71 ];
+                %tmp.99 = getv %tmp.98 :SCREEN_SHAPE_SEMI_OCTAGON;
+                putv self :screenShape %tmp.99;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 620; @position = 18; @symbol_constdef = [screenWidth,620,18,29]; @symbol_type<0> = [Number,620,33,39]; ]
+            const screenWidth as Number = 176;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 621; @position = 18; @symbol_constdef = [screenShape,621,18,29]; ]
+            const screenShape;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 622; @position = 18; @symbol_constdef = [hasNightMode,622,18,30]; @symbol_type<0> = [Boolean,622,34,41]; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 623; @position = 18; @symbol_constdef = [hasGpu,623,18,24]; @symbol_type<0> = [Boolean,623,28,35]; ]
+            const hasGpu as Boolean = false;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 624; @position = 18; @symbol_constdef = [screenHeight,624,18,30]; @symbol_type<0> = [Number,624,34,40]; ]
+            const screenHeight as Number = 176;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 625; @position = 18; @symbol_constdef = [hasTouchScreen,625,18,32]; @symbol_type<0> = [Boolean,625,36,43]; ]
+            const hasTouchScreen as Boolean = false;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 626; @position = 18; @symbol_constdef = [hasEnhancedReadabilityMode,626,18,44]; @symbol_type<0> = [Boolean,626,48,55]; ]
+            const hasEnhancedReadabilityMode as Boolean = false;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 629; @symbol_moduledef = [confirmation_icon_dark__hint_confirm,629,15,51]; ]
+        module confirmation_icon_dark__hint_confirm {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 629; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 630; @position = 18; @symbol_constdef = [filename,630,18,26]; @symbol_type<0> = [String,630,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_completion.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 631; @position = 18; @symbol_constdef = [disableTransparency,631,18,37]; @symbol_type<0> = [Boolean,631,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 632; @position = 18; @symbol_constdef = [dithering,632,18,27]; @symbol_type<0> = [String,632,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 633; @position = 18; @symbol_constdef = [automaticPalette,633,18,34]; @symbol_type<0> = [Boolean,633,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 636; @symbol_moduledef = [prompt_font__body_no_title,636,15,41]; ]
+        module prompt_font__body_no_title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 636; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 637 18 ]
+                symbol [ Graphics %tmp.100 637 34 42 ];
+                %tmp.100 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.101 637 43 62 ];
+                %tmp.101 = getv %tmp.100 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.101;
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 638 18 ]
+                symbol [ Graphics %tmp.102 638 25 33 ];
+                %tmp.102 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.103 638 34 43 ];
+                %tmp.103 = getv %tmp.102 :FONT_TINY;
+                putv self :font %tmp.103;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 637; @position = 18; @symbol_constdef = [justification,637,18,31]; ]
+            const justification;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 638; @position = 18; @symbol_constdef = [font,638,18,22]; ]
+            const font;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 641; @symbol_moduledef = [prompt_size__title_icon,641,15,38]; ]
+        module prompt_size__title_icon {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 641; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 642; @position = 18; @symbol_constdef = [scaleX,642,18,24]; @symbol_type<0> = [Number,642,28,34]; ]
+            const scaleX as Number = 38;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 643; @position = 18; @symbol_constdef = [scaleY,643,18,24]; @symbol_type<0> = [Number,643,28,34]; ]
+            const scaleY as Number = 38;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 644; @position = 18; @symbol_constdef = [scaleRelativeTo,644,18,33]; @symbol_type<0> = [String,644,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 647; @symbol_moduledef = [system_icon_dark__warning,647,15,40]; ]
+        module system_icon_dark__warning {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 647; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 648; @position = 18; @symbol_constdef = [filename,648,18,26]; @symbol_type<0> = [String,648,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__warning.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 649; @position = 18; @symbol_constdef = [disableTransparency,649,18,37]; @symbol_type<0> = [Boolean,649,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 650; @position = 18; @symbol_constdef = [dithering,650,18,27]; @symbol_type<0> = [String,650,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 651; @position = 18; @symbol_constdef = [automaticPalette,651,18,34]; @symbol_type<0> = [Boolean,651,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 654; @symbol_moduledef = [prompt_loc__title_icon,654,15,37]; ]
+        module prompt_loc__title_icon {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 654; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 655; @position = 18; @symbol_constdef = [x,655,18,19]; @symbol_type<0> = [Number,655,23,29]; ]
+            const x as Number = 145;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 656; @position = 18; @symbol_constdef = [y,656,18,19]; @symbol_type<0> = [Number,656,23,29]; ]
+            const y as Number = 31;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 657; @position = 18; @symbol_constdef = [horizontalJustification,657,18,41]; @symbol_type<0> = [String,657,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 658; @position = 18; @symbol_constdef = [verticalJustification,658,18,39]; @symbol_type<0> = [String,658,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 661; @symbol_moduledef = [prompt_font_enhanced_readability__title,661,15,54]; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 661; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 662; @position = 18; @symbol_constdef = [exclude,662,18,25]; @symbol_type<0> = [Boolean,662,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 665; @symbol_moduledef = [prompt_color_dark__body,665,15,38]; ]
+        module prompt_color_dark__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 665; ]
+            <init> {
+[ "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" 667 18 ]
+                symbol [ Graphics %tmp.104 667 31 39 ];
+                %tmp.104 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.105 667 40 57 ];
+                %tmp.105 = getv %tmp.104 :COLOR_TRANSPARENT;
+                putv self :background %tmp.105;
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 666; @position = 18; @symbol_constdef = [color,666,18,23]; @symbol_type<0> = [Number,666,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 667; @position = 18; @symbol_constdef = [background,667,18,28]; ]
+            const background;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 670; @symbol_moduledef = [confirmation_icon__hint_delete,670,15,45]; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 670; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 671; @position = 18; @symbol_constdef = [filename,671,18,26]; @symbol_type<0> = [String,671,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/confirmation_icon__hint_delete.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 672; @position = 18; @symbol_constdef = [disableTransparency,672,18,37]; @symbol_type<0> = [Boolean,672,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 673; @position = 18; @symbol_constdef = [dithering,673,18,27]; @symbol_type<0> = [String,673,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 674; @position = 18; @symbol_constdef = [automaticPalette,674,18,34]; @symbol_type<0> = [Boolean,674,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 677; @symbol_moduledef = [system_icon_light__hint_button_right_top,677,15,55]; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 677; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 678; @position = 18; @symbol_constdef = [filename,678,18,26]; @symbol_type<0> = [String,678,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 679; @position = 18; @symbol_constdef = [disableTransparency,679,18,37]; @symbol_type<0> = [Boolean,679,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 680; @position = 18; @symbol_constdef = [dithering,680,18,27]; @symbol_type<0> = [String,680,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 681; @position = 18; @symbol_constdef = [automaticPalette,681,18,34]; @symbol_type<0> = [Boolean,681,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 684; @symbol_moduledef = [confirmation_size__body,684,15,38]; ]
+        module confirmation_size__body {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 684; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 685; @position = 18; @symbol_constdef = [width,685,18,23]; @symbol_type<0> = [Number,685,27,33]; ]
+            const width as Number = 173;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 686; @position = 18; @symbol_constdef = [height,686,18,24]; @symbol_type<0> = [Number,686,28,34]; ]
+            const height as Number = 63;
+        }
+        [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 689; @symbol_moduledef = [system_icon_positive__check,689,15,42]; ]
+        module system_icon_positive__check {
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 689; ]
+            <init> {
+            }
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 690; @position = 18; @symbol_constdef = [filename,690,18,26]; @symbol_type<0> = [String,690,30,36]; ]
+            const filename as String = "/home/jon/.Garmin/ConnectIQ/Devices/instinct3solar45mm/system_icon_dark__check.svg";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 691; @position = 18; @symbol_constdef = [disableTransparency,691,18,37]; @symbol_type<0> = [Boolean,691,41,48]; ]
+            const disableTransparency as Boolean = true;
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 692; @position = 18; @symbol_constdef = [dithering,692,18,27]; @symbol_type<0> = [String,692,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 693; @position = 18; @symbol_constdef = [automaticPalette,693,18,34]; @symbol_type<0> = [Boolean,693,38,45]; ]
+            const automaticPalette as Boolean = true;
+        }
+    }
+}
+[ @file = "/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen"; @line = 1; ]
+<init> {
+}

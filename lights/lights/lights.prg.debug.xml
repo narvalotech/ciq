@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/home/jon/repos/ciq/lights/lights/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" id="1" lineNum="7" parent="globals/Rez" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="2" lineNum="12" parent="globals/lightsApp" pc="268435480" symbol="&lt;init&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="3" lineNum="12" parent="globals/WebRequestDelegate" pc="268435492" symbol="&lt;init&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="4" lineNum="12" parent="globals/WebRequestView" pc="268435504" symbol="&lt;init&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="5" lineNum="21" parent="globals/lightsApp" pc="268435516" symbol="onStart"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="6" lineNum="31" parent="globals/lightsApp" pc="268435519" symbol="getInitialView"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="6" lineNum="32" parent="globals/lightsApp" pc="268435522" symbol="getInitialView"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="6" lineNum="33" parent="globals/lightsApp" pc="268435546" symbol="getInitialView"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="6" lineNum="34" parent="globals/lightsApp" pc="268435584" symbol="getInitialView"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="7" lineNum="15" parent="globals/lightsApp" pc="268435599" symbol="initialize"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="7" lineNum="16" parent="globals/lightsApp" pc="268435601" symbol="initialize"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/lightsApp.mc" id="8" lineNum="26" parent="globals/lightsApp" pc="268435614" symbol="onStop"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="9" lineNum="24" parent="globals/WebRequestDelegate" pc="268435617" symbol="onMenu"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="9" lineNum="25" parent="globals/WebRequestDelegate" pc="268435619" symbol="onMenu"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="9" lineNum="26" parent="globals/WebRequestDelegate" pc="268435626" symbol="onMenu"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="10" lineNum="17" parent="globals/WebRequestDelegate" pc="268435628" symbol="initialize"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="10" lineNum="18" parent="globals/WebRequestDelegate" pc="268435630" symbol="initialize"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="10" lineNum="19" parent="globals/WebRequestDelegate" pc="268435646" symbol="initialize"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="11" lineNum="66" parent="globals/WebRequestDelegate" pc="268435656" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="11" lineNum="67" parent="globals/WebRequestDelegate" pc="268435658" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="11" lineNum="68" parent="globals/WebRequestDelegate" pc="268435667" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="11" lineNum="70" parent="globals/WebRequestDelegate" pc="268435686" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="12" lineNum="37" parent="globals/WebRequestDelegate" pc="268435714" symbol="&lt;globals/WebRequestDelegate/&lt;&gt;makeRequest&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="12" lineNum="38" parent="globals/WebRequestDelegate" pc="268435717" symbol="&lt;globals/WebRequestDelegate/&lt;&gt;makeRequest&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="12" lineNum="40" parent="globals/WebRequestDelegate" pc="268435736" symbol="&lt;globals/WebRequestDelegate/&lt;&gt;makeRequest&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="12" lineNum="49" parent="globals/WebRequestDelegate" pc="268435769" symbol="&lt;globals/WebRequestDelegate/&lt;&gt;makeRequest&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="12" lineNum="55" parent="globals/WebRequestDelegate" pc="268435776" symbol="&lt;globals/WebRequestDelegate/&lt;&gt;makeRequest&gt;"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="13" lineNum="31" parent="globals/WebRequestDelegate" pc="268435811" symbol="onSelect"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="13" lineNum="32" parent="globals/WebRequestDelegate" pc="268435813" symbol="onSelect"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestDelegate.mc" id="13" lineNum="33" parent="globals/WebRequestDelegate" pc="268435820" symbol="onSelect"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="15" lineNum="22" parent="globals/WebRequestView" pc="268435822" symbol="onLayout"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="16" lineNum="16" parent="globals/WebRequestView" pc="268435825" symbol="initialize"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="16" lineNum="17" parent="globals/WebRequestView" pc="268435827" symbol="initialize"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="44" parent="globals/WebRequestView" pc="268435844" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="45" parent="globals/WebRequestView" pc="268435847" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="46" parent="globals/WebRequestView" pc="268435862" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="47" parent="globals/WebRequestView" pc="268435874" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="48" parent="globals/WebRequestView" pc="268435889" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="49" parent="globals/WebRequestView" pc="268435899" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="50" parent="globals/WebRequestView" pc="268435911" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="51" parent="globals/WebRequestView" pc="268435927" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="53" parent="globals/WebRequestView" pc="268435990" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="54" parent="globals/WebRequestView" pc="268436008" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="18" lineNum="56" parent="globals/WebRequestView" pc="268436029" symbol="onReceive"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="19" lineNum="31" parent="globals/WebRequestView" pc="268436041" symbol="onUpdate"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="19" lineNum="32" parent="globals/WebRequestView" pc="268436043" symbol="onUpdate"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="19" lineNum="33" parent="globals/WebRequestView" pc="268436059" symbol="onUpdate"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/source/WebRequestView.mc" id="19" lineNum="34" parent="globals/WebRequestView" pc="268436067" symbol="onUpdate"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" id="20" lineNum="14" parent="globals/Rez/Layouts" pc="268436107" symbol="MainLayout"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" id="20" lineNum="15" parent="globals/Rez/Layouts" pc="268436118" symbol="MainLayout"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" id="20" lineNum="16" parent="globals/Rez/Layouts" pc="268436205" symbol="MainLayout"/>
+        <entry filename="/home/jon/repos/ciq/lights/lights/gen/006-B4585-00/source/Rez.mcgen" id="20" lineNum="18" parent="globals/Rez/Layouts" pc="268436255" symbol="MainLayout"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="16" method="true" symbol="MainLayout"/>
+        <entry id="11" method="true" symbol="&lt;globals/WebRequestDelegate/&lt;&gt;makeRequest&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="17" symbol="AppName"/>
+        <entry field="true" id="13" symbol="&lt;globals/WebRequestView/&lt;&gt;_message&gt;"/>
+        <entry id="5" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="7" object="true" symbol="WebRequestView"/>
+        <entry id="8389594" symbol="headers"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="15" symbol="id_monkey"/>
+        <entry id="6" object="true" symbol="WebRequestDelegate"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="4" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="8388637" module="true" symbol="Communications"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8389844" symbol="responseType"/>
+        <entry id="8388786" method="true" symbol="method"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="12" method="true" symbol="onReceive"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8" object="true" symbol="lightsApp"/>
+        <entry field="true" id="14" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry field="true" id="10" symbol="&lt;globals/WebRequestDelegate/&lt;&gt;_notify&gt;"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="9" module="true" symbol="Layouts"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry endPc="268435598" name="view" stackId="1" startPc="268435522"/>
+        <entry endPc="268435598" name="delegate" stackId="2" startPc="268435522"/>
+        <entry arg="true" endPc="268435655" name="handler" stackId="1" startPc="268435628"/>
+        <entry arg="true" endPc="268435713" name="responseCode" stackId="1" startPc="268435656"/>
+        <entry arg="true" endPc="268435713" name="data" stackId="2" startPc="268435656"/>
+        <entry endPc="268435809" name="options" stackId="1" startPc="268435717"/>
+        <entry endPc="268435809" name="body" stackId="2" startPc="268435717"/>
+        <entry arg="true" endPc="268436040" name="args" stackId="1" startPc="268435844"/>
+        <entry endPc="268436025" name="keys" stackId="2" startPc="268435889"/>
+        <entry endPc="268435989" name="i" stackId="3" startPc="268435927"/>
+        <entry arg="true" endPc="268436106" name="dc" stackId="1" startPc="268436041"/>
+        <entry arg="true" endPc="268436264" name="dc" stackId="1" startPc="268436107"/>
+        <entry endPc="268436264" name="rez_cmp_local_bitmap_id_monkey" stackId="2" startPc="268436118"/>
+    </localVars>
+    <deviceInfo deviceVersion="6ba91403eda5c30a6644610fa0938a238f4167f3" partNumber="006-B4585-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="id_monkey"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="58" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/Rez" offset="125" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/lightsApp" offset="178" parentId="globals" symbolId="lightsApp" type="class"/>
+        <dataEntry label="globals/WebRequestDelegate" offset="249" parentId="globals" symbolId="WebRequestDelegate" type="class"/>
+        <dataEntry label="globals/WebRequestView" offset="338" parentId="globals" symbolId="WebRequestView" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="436" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="480" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="515" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435479" name="&lt;init&gt;" parent="Rez" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435491" name="&lt;init&gt;" parent="lightsApp" startPc="268435480">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435503" name="&lt;init&gt;" parent="WebRequestDelegate" startPc="268435492">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435515" name="&lt;init&gt;" parent="WebRequestView" startPc="268435504">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435518" name="onStart" parent="lightsApp" startPc="268435516">
+            <param id="state"/>
+            <documentation><![CDATA[<div class="description"> Handle app startup<br/> <div class="param"> state Startup arguments</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435598" name="getInitialView" parent="lightsApp" startPc="268435519">
+            <documentation><![CDATA[<div class="description"> Return the initial view for the app<br/> <div class="returns">Returns  Array Pair [View, Delegate]</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435613" name="initialize" parent="lightsApp" startPc="268435599">
+            <documentation><![CDATA[<div class="description"> Constructor<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435616" name="onStop" parent="lightsApp" startPc="268435614">
+            <param id="state"/>
+            <documentation><![CDATA[<div class="description"> Handle app shutdown<br/> <div class="param"> state Shutdown arguments</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435627" name="onMenu" parent="WebRequestDelegate" startPc="268435617">
+            <documentation><![CDATA[<div class="description"> On a menu event, make a web request<br/> <div class="returns">Returns  true if handled, false otherwise</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435655" name="initialize" parent="WebRequestDelegate" startPc="268435628">
+            <param id="handler"/>
+            <documentation><![CDATA[<div class="description"> Set up the callback to the view<br/> <div class="param"> handler Callback method for when data is received</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435713" name="onReceive" parent="WebRequestDelegate" startPc="268435656">
+            <param id="responseCode"/>
+            <param id="data"/>
+            <documentation><![CDATA[<div class="description"> Receive the data from the web request<br/> <div class="param"> responseCode The server response code</div><br/> <div class="param"> data Content from a successful request</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268435810" name="&lt;globals/WebRequestDelegate/&lt;&gt;makeRequest&gt;" parent="WebRequestDelegate" startPc="268435714">
+            <documentation><![CDATA[<div class="description"> Make the web request<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435821" name="onSelect" parent="WebRequestDelegate" startPc="268435811">
+            <documentation><![CDATA[<div class="description"> On a select event, make a web request<br/> <div class="returns">Returns  true if handled, false otherwise</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="WebRequestView">
+            <documentation><![CDATA[<div class="description"> Restore the state of the app and prepare the view to be shown<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435824" name="onLayout" parent="WebRequestView" startPc="268435822">
+            <param id="dc"/>
+            <documentation><![CDATA[<div class="description"> Load your resources here<br/> <div class="param"> dc Device context</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435843" name="initialize" parent="WebRequestView" startPc="268435825">
+            <documentation><![CDATA[<div class="description"> Constructor<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onHide" parent="WebRequestView">
+            <documentation><![CDATA[<div class="description"> Called when this View is removed from the screen. Save the<br/> state of your app here.<br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436040" name="onReceive" parent="WebRequestView" startPc="268435844">
+            <param id="args"/>
+            <documentation><![CDATA[<div class="description"> Show the result or status of the web request<br/> <div class="param"> args Data from the web request, or error message</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436106" name="onUpdate" parent="WebRequestView" startPc="268436041">
+            <param id="dc"/>
+            <documentation><![CDATA[<div class="description"> Update the view<br/> <div class="param"> dc Device Context</div><br/></div>]]></documentation>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436264" name="MainLayout" parent="Layouts" startPc="268436107">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>
